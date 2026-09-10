@@ -10,8 +10,8 @@ Demo en vivo: https://claude.ai/code/artifact/1d98de2a-d51c-4ffa-a67b-b64dfe7bc5
 
 ## 1. Publicarla
 
-Subí `index.html` a cualquier hosting estático gratis. El archivo tiene que
-quedar como `index.html` en la raíz del sitio.
+Subí `index.html` a cualquier hosting estático gratis. Tiene que quedar como
+`index.html` en la raíz del sitio.
 
 - **Netlify Drop** — https://app.netlify.com/drop — arrastrás el archivo y listo.
 - **GitHub Pages** — subís `index.html` a un repo y activás Pages.
@@ -35,9 +35,9 @@ contraseña se aplica cuando descargás y volvés a subir la página (paso 3).
 ## 3. Cargar una fecha y publicarla
 
 1. Entrás al panel.
-2. Sección *Resultados*: elegís la sede y cargás **PG / PE / PP** (partidos
-   ganados, empatados, perdidos) y **CF / CC** (chicos a favor / en contra) de
-   cada pareja. Los puntos se calculan solos (3 por ganado, 1 por empate).
+2. Sección *Resultados*: elegís la sede y cargás **PG** (partidos ganados) y
+   **PP** (partidos perdidos) de cada pareja. Los puntos se calculan solos
+   (2 por partido ganado; se cambia en *Liga*).
 3. Repetís para las otras dos sedes.
 4. Actualizás el número de *Fecha* en la sección *Liga*.
 5. Botón **Descargar página** (dejá tildado *Nueva fecha* para que se recalcule
@@ -60,16 +60,16 @@ formato `Jugador 1; Jugador 2; nombre opcional`.
 
 La página viene con 32 parejas y resultados ficticios, marcados con *"datos de
 ejemplo"*. Cuando cargues los reales, destildá esa marca en *Liga → Mostrar la
-marca "datos de ejemplo"*. Al importar la lista de parejas la marca se saca sola.
+marca "datos de ejemplo"*. Al importar la lista de parejas se saca sola.
 
 ## 6. Copia de seguridad
 
 *Panel → Copia de seguridad*: **Exportar JSON** guarda todos los datos en un
 archivo; **Importar JSON** los restaura. Conviene exportar de vez en cuando.
 
-## Reglas y desempate
+## Tabla y reglas
 
-Por defecto: 3 puntos por partido ganado, 1 por empate, 0 por perdido.
-Orden de la tabla: puntos → diferencia de chicos → chicos a favor → partidos
-ganados. Todo esto es configurable en *Liga*, incluido el corte de clasificación
-a la final (por defecto, los 8 primeros).
+Columnas: `# · Pareja · PJ · PG · PP · Pts`. En el truco no hay empate, así que
+`PJ = PG + PP`. Orden: puntos → partidos ganados → menos perdidos. El corte de
+clasificación a la final (por defecto, los 8 primeros) y los puntos por victoria
+se cambian en *Liga*.
