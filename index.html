@@ -45,35 +45,30 @@ a{color:var(--accent)}
 ::selection{background:var(--accent-soft)}
 @media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
 
-.wrap{max-width:940px;margin:0 auto;padding:0 clamp(14px,3.5vw,32px)}
-.admin.wrap{max-width:680px;padding-bottom:120px}
+.wrap{max-width:860px;margin:0 auto;padding:0 clamp(14px,3.5vw,32px)}
+.admin.wrap{max-width:660px;padding-bottom:120px}
 
-/* masthead */
 header.mast{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:22px 0 10px;border-bottom:2px solid var(--ink)}
 header.mast h1{margin:0;font:700 clamp(21px,3vw,29px)/1.04 var(--head);letter-spacing:.01em;text-transform:uppercase}
 header.mast .sub{margin:3px 0 0;font-size:12px;color:var(--ink-2)}
 header.mast .rnd{flex:0 0 auto;font:700 13px/1 var(--head);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap;padding-top:4px}
 
-/* region tabs */
 nav.regions{position:sticky;top:0;z-index:5;display:flex;background:var(--bg);border-bottom:1px solid var(--rule-2)}
 nav.regions button{appearance:none;flex:0 1 auto;margin-bottom:-1px;padding:11px 16px 9px;background:none;border:0;border-bottom:2px solid transparent;font:600 12px/1 var(--head);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);cursor:pointer;white-space:nowrap;transition:color .12s}
 nav.regions button:hover{color:var(--ink)}
 nav.regions button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
 nav.regions button:focus-visible{outline:2px solid var(--accent);outline-offset:-4px}
-@media (max-width:560px){nav.regions button{flex:1 1 0;padding:11px 4px 9px;font-size:11px;letter-spacing:.02em;text-align:center}}
+@media (max-width:520px){nav.regions button{flex:1 1 0;padding:11px 4px 9px;font-size:11px;letter-spacing:.02em;text-align:center}}
 
-/* toolbar */
 .bar{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:12px 0 6px;font-size:11.5px;color:var(--ink-3)}
-.bar .demo{color:var(--ink-3)}
 input[type="search"]{appearance:none;width:210px;max-width:52vw;font:400 12.5px var(--body);color:var(--ink);padding:6px 9px;background:var(--surface);border:1px solid var(--rule-2);border-radius:var(--radius)}
 input[type="search"]:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 
-/* table */
 .tw{overflow-x:auto}
 table.pos{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums lining-nums}
-table.pos thead th{font:600 10.5px/1 var(--head);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);text-align:right;padding:0 8px 6px;border-bottom:2px solid var(--ink);white-space:nowrap}
+table.pos thead th{font:600 10.5px/1 var(--head);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);text-align:right;padding:0 10px 6px;border-bottom:2px solid var(--ink);white-space:nowrap}
 table.pos thead th.pos,table.pos thead th.par{text-align:left}
-table.pos tbody td{padding:8px;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
+table.pos tbody td{padding:9px 10px;border-bottom:1px solid var(--rule);text-align:right;white-space:nowrap}
 table.pos tbody td.pos{text-align:left;color:var(--ink-3);font:600 12px/1 var(--head);width:2.6rem}
 table.pos tbody td.pos .mv{margin-left:4px;font-size:9.5px;font-weight:700}
 .mv.up{color:var(--up)} .mv.down{color:var(--down)}
@@ -84,19 +79,16 @@ table.pos tbody td.pts{font-weight:700;font-size:14px}
 table.pos tbody tr:hover td{background:var(--surface)}
 table.pos tbody tr.top td.pos{color:var(--ink)}
 table.pos tbody tr.cut td{border-bottom:2px solid var(--rule-2)}
-.emptyrow td{padding:24px 8px!important;text-align:center!important;color:var(--ink-2);font-style:italic}
-@media (max-width:640px){table.pos .ccf,table.pos .ccc{display:none}}
-@media (max-width:560px){table.pos tbody td.par .b{display:none}table.pos tbody td{padding:9px 7px}table.pos tbody td.pos{width:2.1rem}}
-@media (max-width:520px){table.pos .cpe,table.pos .cpj{display:none}}
+.emptyrow td{padding:24px 10px!important;text-align:center!important;color:var(--ink-2);font-style:italic}
+@media (max-width:560px){table.pos tbody td.par .b{display:none}table.pos tbody td{padding:9px 8px}}
+@media (max-width:440px){table.pos .cpj{display:none}}
 
-/* footer */
 footer.foot{margin:16px 0 40px;padding-top:12px;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;font-size:11px;color:var(--ink-2)}
 footer.foot .rule{max-width:60ch}
-footer.foot .act{display:flex;gap:14px;white-space:nowrap}
+footer.foot .lnks{display:flex;gap:14px;white-space:nowrap}
 .lk{appearance:none;background:none;border:0;padding:0;font:inherit;color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
 .lk:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-/* admin */
 .atop{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:20px 0 10px;border-bottom:2px solid var(--ink)}
 .atop h2{margin:0;font:700 17px/1 var(--head);letter-spacing:.03em;text-transform:uppercase}
 .gate{max-width:320px;margin:52px auto}
@@ -113,16 +105,16 @@ footer.foot .act{display:flex;gap:14px;white-space:nowrap}
 .admin textarea{min-height:80px;resize:vertical;font:400 12px var(--body)}
 .admin .ck{display:flex;gap:7px;align-items:flex-start;font-size:12px;margin:11px 0 0}
 .admin .ck input{margin-top:2px;flex:0 0 auto}
-.pe{display:flex;flex-direction:column;margin-top:9px}
+.plist{display:flex;flex-direction:column;margin-top:9px}
 .pl{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:8px 0;border-bottom:1px solid var(--rule)}
 .pl .nm{grid-column:1/-1}
 .pl .rm{grid-column:1/-1;justify-self:end;appearance:none;border:0;background:none;color:var(--ink-2);text-decoration:underline;text-underline-offset:2px;cursor:pointer;padding:0;font-size:11px}
 table.grid{width:100%;border-collapse:collapse;margin-top:11px;font-variant-numeric:tabular-nums}
-table.grid th{font:600 9.5px/1 var(--head);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);text-align:right;padding:0 5px 5px;border-bottom:1px solid var(--rule-2)}
+table.grid th{font:600 9.5px/1 var(--head);letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);text-align:right;padding:0 6px 5px;border-bottom:1px solid var(--rule-2)}
 table.grid th:first-child{text-align:left}
-table.grid td{padding:3px 5px;border-bottom:1px solid var(--rule);text-align:right}
+table.grid td{padding:3px 6px;border-bottom:1px solid var(--rule);text-align:right}
 table.grid td:first-child{text-align:left;font-size:12px}
-table.grid input{width:3rem;text-align:right;padding:4px 5px;font:400 12px var(--body);background:var(--surface);border:1px solid var(--rule-2);border-radius:var(--radius);color:var(--ink)}
+table.grid input{width:3.4rem;text-align:right;padding:4px 6px;font:400 12px var(--body);background:var(--surface);border:1px solid var(--rule-2);border-radius:var(--radius);color:var(--ink)}
 table.grid .gp{font-weight:700}
 .btn{appearance:none;font:600 12.5px var(--body);padding:8px 14px;border-radius:var(--radius);border:1px solid var(--ink);background:var(--ink);color:var(--bg);cursor:pointer}
 .btn.o{background:none;color:var(--ink)}
@@ -141,7 +133,7 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
 </head>
 <body>
 <div id="app"><noscript>Esta página necesita JavaScript activado para mostrar la tabla de posiciones.</noscript></div>
-<script type="application/json" id="state">{"meta":{"leagueName":"Liga Fueguina de Truco","subtitle":"Torneo de Parejas","season":"2026","fecha":8,"updatedAt":"2026-09-09","winPoints":3,"drawPoints":1,"lossPoints":0,"manualPts":false,"qualify":8,"adminHash":"cyrb53:164fe814c289fb","regions":[{"id":"ushuaia","label":"Ushuaia"},{"id":"riogrande","label":"Río Grande"},{"id":"provincial","label":"Provincial"}],"defaultRegion":"provincial","demo":true},"pairs":[{"id":"p01","name":"","p1":"Antonella Paredes","p2":"Vanina Romero"},{"id":"p02","name":"","p1":"Ramiro Castro","p2":"Noelia Cabrera"},{"id":"p03","name":"","p1":"Carla Gutiérrez","p2":"Bruno Toledo"},{"id":"p04","name":"","p1":"Guillermo Cardozo","p2":"Carolina Ibáñez"},{"id":"p05","name":"","p1":"Juan Ledesma","p2":"Agustina Domínguez"},{"id":"p06","name":"","p1":"Tomás Rojas","p2":"Lautaro Aguirre"},{"id":"p07","name":"","p1":"Matías Acosta","p2":"Maximiliano Barrios"},{"id":"p08","name":"","p1":"Martín Cáceres","p2":"Damián Maldonado"},{"id":"p09","name":"","p1":"Paula Herrera","p2":"Darío López"},{"id":"p10","name":"","p1":"Valentina Ríos","p2":"Walter Sánchez"},{"id":"p11","name":"","p1":"Lucas Correa","p2":"Débora Ruiz"},{"id":"p12","name":"","p1":"Micaela Bravo","p2":"Yamila Bustos"},{"id":"p13","name":"","p1":"Adrián Sosa","p2":"Brenda Morales"},{"id":"p14","name":"","p1":"Soledad Fernández","p2":"Julián Chávez"},{"id":"p15","name":"","p1":"Sergio Miranda","p2":"Santiago Cejas"},{"id":"p16","name":"","p1":"Gabriela Ponce","p2":"Ezequiel Vera"},{"id":"p17","name":"","p1":"Franco Escobar","p2":"Gastón Quiroga"},{"id":"p18","name":"","p1":"Daniela Luna","p2":"Mariano Benítez"},{"id":"p19","name":"","p1":"Ignacio Suárez","p2":"Nicolás Peralta"},{"id":"p20","name":"","p1":"Camila Ramírez","p2":"Cristian Vega"},{"id":"p21","name":"","p1":"Marcelo Torres","p2":"Leandro Villalba"},{"id":"p22","name":"","p1":"Sofía Almada","p2":"Romina Godoy"},{"id":"p23","name":"","p1":"Emiliano Ojeda","p2":"Joaquín Ávalos"},{"id":"p24","name":"","p1":"Hernán Pereyra","p2":"Florencia Coria"},{"id":"p25","name":"","p1":"Lucía Núñez","p2":"Diego Figueroa"},{"id":"p26","name":"","p1":"Natalia Álvarez","p2":"Rodrigo García"},{"id":"p27","name":"","p1":"Julieta Ferreyra","p2":"Andrés Villagra"},{"id":"p28","name":"","p1":"Melina Ortiz","p2":"Rocío Rodríguez"},{"id":"p29","name":"","p1":"Facundo Gómez","p2":"Kevin Díaz"},{"id":"p30","name":"","p1":"Federico Pérez","p2":"Alan Molina"},{"id":"p31","name":"","p1":"Rubén Méndez","p2":"Gonzalo Silva"},{"id":"p32","name":"","p1":"Pablo Roldán","p2":"Nahuel Paredes"}],"standings":{"ushuaia":{"p01":{"pg":5,"pe":1,"pp":5,"cf":18,"cc":14,"adj":0,"prevRank":18},"p02":{"pg":3,"pe":0,"pp":6,"cf":10,"cc":16,"adj":0,"prevRank":30},"p03":{"pg":6,"pe":1,"pp":6,"cf":17,"cc":21,"adj":0,"prevRank":15},"p04":{"pg":3,"pe":2,"pp":6,"cf":10,"cc":20,"adj":0,"prevRank":24},"p05":{"pg":1,"pe":0,"pp":10,"cf":7,"cc":25,"adj":0,"prevRank":32},"p06":{"pg":5,"pe":0,"pp":4,"cf":15,"cc":11,"adj":0,"prevRank":19},"p07":{"pg":11,"pe":0,"pp":1,"cf":27,"cc":9,"adj":0,"prevRank":2},"p08":{"pg":9,"pe":0,"pp":4,"cf":23,"cc":14,"adj":0,"prevRank":8},"p09":{"pg":3,"pe":0,"pp":10,"cf":10,"cc":26,"adj":0,"prevRank":29},"p10":{"pg":8,"pe":0,"pp":5,"cf":23,"cc":16,"adj":0,"prevRank":10},"p11":{"pg":7,"pe":0,"pp":2,"cf":16,"cc":11,"adj":0,"prevRank":14},"p12":{"pg":1,"pe":2,"pp":6,"cf":10,"cc":14,"adj":0,"prevRank":31},"p13":{"pg":7,"pe":0,"pp":4,"cf":22,"cc":11,"adj":0,"prevRank":13},"p14":{"pg":8,"pe":2,"pp":1,"cf":19,"cc":12,"adj":0,"prevRank":7},"p15":{"pg":7,"pe":1,"pp":3,"cf":21,"cc":11,"adj":0,"prevRank":9},"p16":{"pg":9,"pe":2,"pp":2,"cf":23,"cc":14,"adj":0,"prevRank":1},"p17":{"pg":6,"pe":0,"pp":6,"cf":21,"cc":15,"adj":0,"prevRank":16},"p18":{"pg":12,"pe":0,"pp":1,"cf":29,"cc":9,"adj":0,"prevRank":4},"p19":{"pg":2,"pe":0,"pp":9,"cf":10,"cc":22,"adj":0,"prevRank":28},"p20":{"pg":7,"pe":2,"pp":2,"cf":19,"cc":11,"adj":0,"prevRank":11},"p21":{"pg":5,"pe":0,"pp":7,"cf":16,"cc":18,"adj":0,"prevRank":21},"p22":{"pg":8,"pe":1,"pp":4,"cf":24,"cc":13,"adj":0,"prevRank":6},"p23":{"pg":9,"pe":0,"pp":4,"cf":23,"cc":15,"adj":0,"prevRank":5},"p24":{"pg":4,"pe":0,"pp":6,"cf":14,"cc":16,"adj":0,"prevRank":23},"p25":{"pg":4,"pe":0,"pp":5,"cf":14,"cc":13,"adj":0,"prevRank":25},"p26":{"pg":3,"pe":1,"pp":8,"cf":13,"cc":22,"adj":0,"prevRank":26},"p27":{"pg":3,"pe":1,"pp":8,"cf":9,"cc":24,"adj":0,"prevRank":27},"p28":{"pg":4,"pe":0,"pp":7,"cf":12,"cc":21,"adj":0,"prevRank":22},"p29":{"pg":11,"pe":0,"pp":1,"cf":25,"cc":10,"adj":0,"prevRank":3},"p30":{"pg":7,"pe":1,"pp":4,"cf":23,"cc":12,"adj":0,"prevRank":12},"p31":{"pg":6,"pe":0,"pp":5,"cf":15,"cc":16,"adj":0,"prevRank":17},"p32":{"pg":5,"pe":0,"pp":8,"cf":16,"cc":22,"adj":0,"prevRank":20}},"riogrande":{"p01":{"pg":8,"pe":0,"pp":4,"cf":17,"cc":19,"adj":0,"prevRank":7},"p02":{"pg":9,"pe":0,"pp":4,"cf":21,"cc":17,"adj":0,"prevRank":3},"p03":{"pg":5,"pe":2,"pp":5,"cf":15,"cc":19,"adj":0,"prevRank":18},"p04":{"pg":6,"pe":0,"pp":6,"cf":18,"cc":17,"adj":0,"prevRank":19},"p05":{"pg":7,"pe":1,"pp":2,"cf":21,"cc":8,"adj":0,"prevRank":5},"p06":{"pg":7,"pe":0,"pp":4,"cf":21,"cc":12,"adj":0,"prevRank":10},"p07":{"pg":4,"pe":0,"pp":8,"cf":14,"cc":21,"adj":0,"prevRank":24},"p08":{"pg":4,"pe":1,"pp":4,"cf":11,"cc":15,"adj":0,"prevRank":28},"p09":{"pg":3,"pe":1,"pp":6,"cf":12,"cc":17,"adj":0,"prevRank":29},"p10":{"pg":9,"pe":1,"pp":1,"cf":25,"cc":7,"adj":0,"prevRank":1},"p11":{"pg":8,"pe":0,"pp":1,"cf":17,"cc":10,"adj":0,"prevRank":4},"p12":{"pg":5,"pe":0,"pp":8,"cf":13,"cc":26,"adj":0,"prevRank":21},"p13":{"pg":4,"pe":2,"pp":6,"cf":16,"cc":18,"adj":0,"prevRank":26},"p14":{"pg":4,"pe":2,"pp":5,"cf":15,"cc":15,"adj":0,"prevRank":20},"p15":{"pg":5,"pe":0,"pp":8,"cf":16,"cc":23,"adj":0,"prevRank":22},"p16":{"pg":7,"pe":1,"pp":3,"cf":19,"cc":13,"adj":0,"prevRank":8},"p17":{"pg":4,"pe":1,"pp":4,"cf":13,"cc":12,"adj":0,"prevRank":25},"p18":{"pg":5,"pe":2,"pp":3,"cf":18,"cc":10,"adj":0,"prevRank":17},"p19":{"pg":1,"pe":0,"pp":10,"cf":8,"cc":24,"adj":0,"prevRank":32},"p20":{"pg":6,"pe":1,"pp":5,"cf":21,"cc":14,"adj":0,"prevRank":15},"p21":{"pg":3,"pe":0,"pp":6,"cf":10,"cc":17,"adj":0,"prevRank":30},"p22":{"pg":6,"pe":0,"pp":6,"cf":19,"cc":17,"adj":0,"prevRank":14},"p23":{"pg":7,"pe":0,"pp":2,"cf":19,"cc":7,"adj":0,"prevRank":9},"p24":{"pg":5,"pe":0,"pp":5,"cf":15,"cc":14,"adj":0,"prevRank":23},"p25":{"pg":5,"pe":1,"pp":6,"cf":15,"cc":20,"adj":0,"prevRank":16},"p26":{"pg":6,"pe":0,"pp":7,"cf":20,"cc":18,"adj":0,"prevRank":13},"p27":{"pg":3,"pe":1,"pp":6,"cf":10,"cc":18,"adj":0,"prevRank":31},"p28":{"pg":4,"pe":0,"pp":5,"cf":14,"cc":13,"adj":0,"prevRank":27},"p29":{"pg":9,"pe":0,"pp":3,"cf":23,"cc":12,"adj":0,"prevRank":2},"p30":{"pg":8,"pe":0,"pp":1,"cf":19,"cc":8,"adj":0,"prevRank":6},"p31":{"pg":7,"pe":0,"pp":3,"cf":16,"cc":14,"adj":0,"prevRank":12},"p32":{"pg":7,"pe":0,"pp":5,"cf":20,"cc":14,"adj":0,"prevRank":11}},"provincial":{"p01":{"pg":7,"pe":0,"pp":6,"cf":20,"cc":19,"adj":0,"prevRank":11},"p02":{"pg":4,"pe":2,"pp":3,"cf":13,"cc":12,"adj":0,"prevRank":21},"p03":{"pg":4,"pe":2,"pp":4,"cf":13,"cc":15,"adj":0,"prevRank":20},"p04":{"pg":5,"pe":2,"pp":4,"cf":16,"cc":15,"adj":0,"prevRank":17},"p05":{"pg":2,"pe":1,"pp":6,"cf":9,"cc":16,"adj":0,"prevRank":32},"p06":{"pg":7,"pe":1,"pp":2,"cf":20,"cc":8,"adj":0,"prevRank":7},"p07":{"pg":7,"pe":0,"pp":2,"cf":16,"cc":9,"adj":0,"prevRank":13},"p08":{"pg":3,"pe":0,"pp":8,"cf":10,"cc":21,"adj":0,"prevRank":28},"p09":{"pg":3,"pe":0,"pp":7,"cf":12,"cc":17,"adj":0,"prevRank":24},"p10":{"pg":6,"pe":0,"pp":4,"cf":17,"cc":11,"adj":0,"prevRank":14},"p11":{"pg":6,"pe":1,"pp":4,"cf":16,"cc":14,"adj":0,"prevRank":9},"p12":{"pg":3,"pe":0,"pp":7,"cf":10,"cc":19,"adj":0,"prevRank":30},"p13":{"pg":9,"pe":0,"pp":3,"cf":23,"cc":12,"adj":0,"prevRank":2},"p14":{"pg":4,"pe":0,"pp":7,"cf":10,"cc":23,"adj":0,"prevRank":23},"p15":{"pg":7,"pe":0,"pp":4,"cf":20,"cc":12,"adj":0,"prevRank":12},"p16":{"pg":8,"pe":0,"pp":3,"cf":19,"cc":14,"adj":0,"prevRank":5},"p17":{"pg":3,"pe":1,"pp":6,"cf":12,"cc":16,"adj":0,"prevRank":25},"p18":{"pg":7,"pe":1,"pp":5,"cf":20,"cc":17,"adj":0,"prevRank":6},"p19":{"pg":2,"pe":0,"pp":11,"cf":10,"cc":28,"adj":0,"prevRank":31},"p20":{"pg":9,"pe":0,"pp":3,"cf":22,"cc":13,"adj":0,"prevRank":3},"p21":{"pg":4,"pe":2,"pp":6,"cf":15,"cc":18,"adj":0,"prevRank":26},"p22":{"pg":8,"pe":1,"pp":3,"cf":22,"cc":12,"adj":0,"prevRank":1},"p23":{"pg":7,"pe":0,"pp":2,"cf":18,"cc":9,"adj":0,"prevRank":8},"p24":{"pg":5,"pe":0,"pp":4,"cf":12,"cc":14,"adj":0,"prevRank":19},"p25":{"pg":6,"pe":0,"pp":3,"cf":16,"cc":11,"adj":0,"prevRank":15},"p26":{"pg":6,"pe":0,"pp":3,"cf":15,"cc":11,"adj":0,"prevRank":16},"p27":{"pg":2,"pe":0,"pp":9,"cf":7,"cc":25,"adj":0,"prevRank":29},"p28":{"pg":2,"pe":0,"pp":8,"cf":8,"cc":20,"adj":0,"prevRank":27},"p29":{"pg":7,"pe":0,"pp":3,"cf":17,"cc":13,"adj":0,"prevRank":10},"p30":{"pg":11,"pe":0,"pp":2,"cf":26,"cc":13,"adj":0,"prevRank":4},"p31":{"pg":5,"pe":0,"pp":6,"cf":17,"cc":16,"adj":0,"prevRank":18},"p32":{"pg":5,"pe":0,"pp":4,"cf":12,"cc":14,"adj":0,"prevRank":22}}}}</script>
+<script type="application/json" id="state">{"meta":{"leagueName":"Liga Fueguina de Truco","subtitle":"Torneo de Parejas","season":"2026","fecha":8,"updatedAt":"2026-09-10","winPoints":2,"lossPoints":0,"manualPts":false,"qualify":8,"adminHash":"cyrb53:164fe814c289fb","regions":[{"id":"ushuaia","label":"Ushuaia"},{"id":"riogrande","label":"Río Grande"},{"id":"provincial","label":"Provincial"}],"defaultRegion":"provincial","demo":true},"pairs":[{"id":"p01","name":"","p1":"Andrés Paredes","p2":"Kevin Escobar"},{"id":"p02","name":"","p1":"Juan Barrios","p2":"Vanina Roldán"},{"id":"p03","name":"","p1":"Pablo Méndez","p2":"Damián Cáceres"},{"id":"p04","name":"","p1":"Ezequiel Figueroa","p2":"Valentina Castro"},{"id":"p05","name":"","p1":"Marcelo Luna","p2":"Emiliano Quiroga"},{"id":"p06","name":"","p1":"Cristian Rojas","p2":"Darío Ibáñez"},{"id":"p07","name":"","p1":"Hernán Ojeda","p2":"Nahuel Sosa"},{"id":"p08","name":"","p1":"Facundo Ávalos","p2":"Gonzalo Ferreyra"},{"id":"p09","name":"","p1":"Martín Bustos","p2":"Ramiro Ruiz"},{"id":"p10","name":"","p1":"Bruno Vera","p2":"Joaquín Ortiz"},{"id":"p11","name":"","p1":"Alan Sánchez","p2":"Lucía Vega"},{"id":"p12","name":"","p1":"Carla Villagra","p2":"Diego Cabrera"},{"id":"p13","name":"","p1":"Maximiliano Pérez","p2":"Romina Ledesma"},{"id":"p14","name":"","p1":"Camila Chávez","p2":"Walter Godoy"},{"id":"p15","name":"","p1":"Lucas Fernández","p2":"Julieta Ramírez"},{"id":"p16","name":"","p1":"Julián Gutiérrez","p2":"Natalia Coria"},{"id":"p17","name":"","p1":"Carolina Miranda","p2":"Nicolás Gómez"},{"id":"p18","name":"","p1":"Franco Toledo","p2":"Lautaro Álvarez"},{"id":"p19","name":"","p1":"Adrián Suárez","p2":"Gastón Ponce"},{"id":"p20","name":"","p1":"Leandro Villalba","p2":"Ignacio Benítez"},{"id":"p21","name":"","p1":"Noelia Molina","p2":"Daniela Herrera"},{"id":"p22","name":"","p1":"Yamila Cejas","p2":"Gabriela Correa"},{"id":"p23","name":"","p1":"Rodrigo Ríos","p2":"Rocío García"},{"id":"p24","name":"","p1":"Rubén Morales","p2":"Tomás Cardozo"},{"id":"p25","name":"","p1":"Guillermo Romero","p2":"Brenda Silva"},{"id":"p26","name":"","p1":"Santiago Díaz","p2":"Sofía Torres"},{"id":"p27","name":"","p1":"Mariano Bravo","p2":"Florencia Domínguez"},{"id":"p28","name":"","p1":"Paula Aguirre","p2":"Débora Peralta"},{"id":"p29","name":"","p1":"Agustina Rodríguez","p2":"Micaela Maldonado"},{"id":"p30","name":"","p1":"Soledad López","p2":"Matías Pereyra"},{"id":"p31","name":"","p1":"Antonella Acosta","p2":"Federico Almada"},{"id":"p32","name":"","p1":"Sergio Núñez","p2":"Melina Paredes"}],"standings":{"ushuaia":{"p01":{"pg":6,"pp":7,"prevRank":14},"p02":{"pg":8,"pp":5,"prevRank":1},"p03":{"pg":8,"pp":4,"prevRank":3},"p04":{"pg":6,"pp":3,"prevRank":12},"p05":{"pg":3,"pp":7,"prevRank":30},"p06":{"pg":2,"pp":7,"prevRank":29},"p07":{"pg":6,"pp":3,"prevRank":13},"p08":{"pg":3,"pp":7,"prevRank":31},"p09":{"pg":7,"pp":4,"prevRank":10},"p10":{"pg":3,"pp":6,"prevRank":21},"p11":{"pg":5,"pp":5,"prevRank":17},"p12":{"pg":7,"pp":2,"prevRank":6},"p13":{"pg":4,"pp":9,"prevRank":24},"p14":{"pg":8,"pp":5,"prevRank":4},"p15":{"pg":3,"pp":7,"prevRank":28},"p16":{"pg":7,"pp":6,"prevRank":9},"p17":{"pg":6,"pp":3,"prevRank":11},"p18":{"pg":10,"pp":3,"prevRank":2},"p19":{"pg":8,"pp":3,"prevRank":5},"p20":{"pg":4,"pp":8,"prevRank":26},"p21":{"pg":3,"pp":10,"prevRank":32},"p22":{"pg":5,"pp":7,"prevRank":20},"p23":{"pg":5,"pp":7,"prevRank":18},"p24":{"pg":6,"pp":3,"prevRank":15},"p25":{"pg":7,"pp":4,"prevRank":8},"p26":{"pg":3,"pp":6,"prevRank":27},"p27":{"pg":5,"pp":7,"prevRank":16},"p28":{"pg":7,"pp":3,"prevRank":7},"p29":{"pg":4,"pp":6,"prevRank":23},"p30":{"pg":5,"pp":4,"prevRank":19},"p31":{"pg":3,"pp":6,"prevRank":25},"p32":{"pg":4,"pp":6,"prevRank":22}},"riogrande":{"p01":{"pg":4,"pp":5,"prevRank":21},"p02":{"pg":8,"pp":3,"prevRank":5},"p03":{"pg":5,"pp":5,"prevRank":18},"p04":{"pg":8,"pp":2,"prevRank":6},"p05":{"pg":3,"pp":10,"prevRank":32},"p06":{"pg":2,"pp":7,"prevRank":29},"p07":{"pg":6,"pp":3,"prevRank":14},"p08":{"pg":3,"pp":10,"prevRank":24},"p09":{"pg":7,"pp":2,"prevRank":8},"p10":{"pg":5,"pp":4,"prevRank":17},"p11":{"pg":5,"pp":6,"prevRank":20},"p12":{"pg":8,"pp":3,"prevRank":4},"p13":{"pg":3,"pp":8,"prevRank":27},"p14":{"pg":10,"pp":3,"prevRank":1},"p15":{"pg":3,"pp":6,"prevRank":23},"p16":{"pg":7,"pp":6,"prevRank":12},"p17":{"pg":8,"pp":5,"prevRank":3},"p18":{"pg":7,"pp":2,"prevRank":7},"p19":{"pg":9,"pp":3,"prevRank":2},"p20":{"pg":3,"pp":8,"prevRank":28},"p21":{"pg":2,"pp":7,"prevRank":30},"p22":{"pg":7,"pp":3,"prevRank":13},"p23":{"pg":5,"pp":5,"prevRank":19},"p24":{"pg":7,"pp":2,"prevRank":9},"p25":{"pg":4,"pp":5,"prevRank":25},"p26":{"pg":5,"pp":8,"prevRank":26},"p27":{"pg":2,"pp":7,"prevRank":31},"p28":{"pg":6,"pp":5,"prevRank":16},"p29":{"pg":6,"pp":5,"prevRank":10},"p30":{"pg":7,"pp":5,"prevRank":11},"p31":{"pg":7,"pp":6,"prevRank":15},"p32":{"pg":3,"pp":6,"prevRank":22}},"provincial":{"p01":{"pg":5,"pp":6,"prevRank":18},"p02":{"pg":8,"pp":5,"prevRank":4},"p03":{"pg":8,"pp":5,"prevRank":5},"p04":{"pg":9,"pp":2,"prevRank":1},"p05":{"pg":3,"pp":9,"prevRank":24},"p06":{"pg":2,"pp":8,"prevRank":30},"p07":{"pg":8,"pp":5,"prevRank":6},"p08":{"pg":2,"pp":9,"prevRank":31},"p09":{"pg":7,"pp":3,"prevRank":7},"p10":{"pg":5,"pp":6,"prevRank":20},"p11":{"pg":5,"pp":7,"prevRank":22},"p12":{"pg":7,"pp":4,"prevRank":8},"p13":{"pg":2,"pp":7,"prevRank":29},"p14":{"pg":6,"pp":3,"prevRank":9},"p15":{"pg":3,"pp":10,"prevRank":27},"p16":{"pg":6,"pp":6,"prevRank":14},"p17":{"pg":6,"pp":4,"prevRank":12},"p18":{"pg":7,"pp":2,"prevRank":3},"p19":{"pg":9,"pp":3,"prevRank":2},"p20":{"pg":5,"pp":6,"prevRank":26},"p21":{"pg":2,"pp":10,"prevRank":32},"p22":{"pg":5,"pp":4,"prevRank":17},"p23":{"pg":5,"pp":5,"prevRank":19},"p24":{"pg":6,"pp":3,"prevRank":10},"p25":{"pg":7,"pp":5,"prevRank":11},"p26":{"pg":5,"pp":8,"prevRank":21},"p27":{"pg":3,"pp":7,"prevRank":23},"p28":{"pg":5,"pp":4,"prevRank":16},"p29":{"pg":5,"pp":4,"prevRank":15},"p30":{"pg":6,"pp":4,"prevRank":13},"p31":{"pg":3,"pp":6,"prevRank":25},"p32":{"pg":4,"pp":9,"prevRank":28}}}}</script>
 <script id="logic">
 (function () {
   "use strict";
@@ -188,7 +180,7 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
   catch (e) { app.textContent = "No se pudo leer el estado de la liga."; return; }
   normalize(state);
 
-  function blank() { return { pg: 0, pe: 0, pp: 0, cf: 0, cc: 0, adj: 0, prevRank: 0 }; }
+  function blank() { return { pg: 0, pp: 0, prevRank: 0 }; }
 
   function normalize(st) {
     var m = st.meta = st.meta || {};
@@ -197,8 +189,7 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
     m.season = m.season || String(new Date().getFullYear());
     m.fecha = num(m.fecha);
     m.updatedAt = m.updatedAt || todayISO();
-    m.winPoints = hasInt(m.winPoints) ? num(m.winPoints) : 3;
-    m.drawPoints = hasInt(m.drawPoints) ? num(m.drawPoints) : 1;
+    m.winPoints = hasInt(m.winPoints) ? num(m.winPoints) : 2;
     m.lossPoints = hasInt(m.lossPoints) ? num(m.lossPoints) : 0;
     m.manualPts = !!m.manualPts;
     m.qualify = hasInt(m.qualify) ? num(m.qualify) : 0;
@@ -226,12 +217,9 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
       var out = {};
       st.pairs.forEach(function (p) {
         var s = src[p.id] || {};
-        var cf = hasInt(s.cf) ? num(s.cf) : (num(s.dif) > 0 ? num(s.dif) : 0);
-        var cc = hasInt(s.cc) ? num(s.cc) : (num(s.dif) < 0 ? -num(s.dif) : 0);
         out[p.id] = {
-          pg: Math.max(0, num(s.pg)), pe: Math.max(0, num(s.pe)), pp: Math.max(0, num(s.pp)),
-          cf: Math.max(0, cf), cc: Math.max(0, cc), adj: num(s.adj),
-          pts: hasInt(s.pts) ? num(s.pts) : (num(s.pg) * m.winPoints + num(s.pe) * m.drawPoints + num(s.pp) * m.lossPoints + num(s.adj)),
+          pg: Math.max(0, num(s.pg)), pp: Math.max(0, num(s.pp)),
+          pts: hasInt(s.pts) ? num(s.pts) : (num(s.pg) * m.winPoints + num(s.pp) * m.lossPoints),
           prevRank: num(s.prevRank)
         };
       });
@@ -256,17 +244,17 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
 
   function ptsOf(s) {
     var m = state.meta;
-    return m.manualPts ? num(s.pts) : (num(s.pg) * m.winPoints + num(s.pe) * m.drawPoints + num(s.pp) * m.lossPoints + num(s.adj));
+    return m.manualPts ? num(s.pts) : (num(s.pg) * m.winPoints + num(s.pp) * m.lossPoints);
   }
-  function computeRows(regionId) {
+  function rankRows(regionId) {
     var tbl = state.standings[regionId] || {};
     var rows = state.pairs.map(function (p) {
       var s = tbl[p.id] || blank();
-      var pg = num(s.pg), pe = num(s.pe), pp = num(s.pp), cf = num(s.cf), cc = num(s.cc);
-      return { pair: p, pg: pg, pe: pe, pp: pp, pj: pg + pe + pp, cf: cf, cc: cc, dif: cf - cc, pts: ptsOf(s), prevRank: num(s.prevRank) };
+      var pg = num(s.pg), pp = num(s.pp);
+      return { pair: p, pg: pg, pp: pp, pj: pg + pp, pts: ptsOf(s), prevRank: num(s.prevRank) };
     });
     rows.sort(function (a, b) {
-      return b.pts - a.pts || b.dif - a.dif || b.cf - a.cf || b.pg - a.pg || label(a.pair).localeCompare(label(b.pair), "es");
+      return b.pts - a.pts || b.pg - a.pg || a.pp - b.pp || label(a.pair).localeCompare(label(b.pair), "es");
     });
     rows.forEach(function (r, i) { r.rank = i + 1; r.mov = r.prevRank ? (r.prevRank - r.rank) : 0; });
     return rows;
@@ -307,25 +295,24 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
       '<td class="pos">' + r.rank + movHTML(r) + "</td>" +
       '<td class="par"><span class="a">' + esc(label(r.pair)) + '</span><span class="b">' + esc(r.pair.p1 + " · " + r.pair.p2) + "</span></td>" +
       '<td class="cpj">' + r.pj + "</td>" +
-      '<td class="cpg">' + r.pg + "</td>" +
-      '<td class="cpe">' + r.pe + "</td>" +
-      '<td class="cpp">' + r.pp + "</td>" +
-      '<td class="ccf">' + r.cf + "</td>" +
-      '<td class="ccc">' + r.cc + "</td>" +
-      "<td>" + (r.dif > 0 ? "+" + r.dif : r.dif) + "</td>" +
+      "<td>" + r.pg + "</td>" +
+      "<td>" + r.pp + "</td>" +
       '<td class="pts">' + r.pts + "</td></tr>";
   }
 
   function renderBoard() {
     var m = state.meta, region = currentRegion();
-    var rows = computeRows(region.id);
+    var rows = rankRows(region.id);
     var shown = view.query ? rows.filter(function (r) { return matchQuery(r, view.query); }) : rows;
-    var pts = m.manualPts ? "" : (m.winPoints + " pts por partido ganado, " + m.drawPoints + " por empate. ");
 
     var tabs = m.regions.map(function (r) {
       var on = r.id === region.id;
       return '<button role="tab" id="t-' + esc(r.id) + '" aria-selected="' + on + '" tabindex="' + (on ? "0" : "-1") + '" data-r="' + esc(r.id) + '">' + esc(r.label) + "</button>";
     }).join("");
+
+    var regla = (m.manualPts ? "" : m.winPoints + " puntos por partido ganado. ") +
+      (m.qualify && m.qualify < state.pairs.length ? "Clasifican a la final los primeros " + m.qualify + ". " : "") +
+      "Desempate: partidos ganados.";
 
     app.innerHTML =
       '<div class="wrap">' +
@@ -336,21 +323,19 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
         "</header>" +
         '<nav class="regions" role="tablist" aria-label="Sede">' + tabs + "</nav>" +
         '<div class="bar">' +
-          "<span>" + (view.query ? shown.length + " de " + rows.length + " parejas" : "") + (m.demo ? (view.query ? " · " : "") + '<span class="demo">datos de ejemplo</span>' : "") + "</span>" +
+          "<span>" + (view.query ? shown.length + " de " + rows.length + " parejas" : (m.demo ? "datos de ejemplo" : "")) + "</span>" +
           '<input type="search" id="q" placeholder="Buscar jugador o pareja" value="' + esc(view.query) + '" autocomplete="off" spellcheck="false">' +
         "</div>" +
         '<div class="tw"><table class="pos"><thead><tr>' +
           '<th class="pos">#</th><th class="par">Pareja</th>' +
-          '<th class="cpj">PJ</th><th class="cpg">PG</th><th class="cpe">PE</th><th class="cpp">PP</th>' +
-          '<th class="ccf" title="Chicos a favor">CF</th><th class="ccc" title="Chicos en contra">CC</th>' +
-          '<th title="Diferencia de chicos">Dif</th><th>Pts</th>' +
+          '<th class="cpj">PJ</th><th>PG</th><th>PP</th><th>Pts</th>' +
         "</tr></thead><tbody>" +
           (shown.length ? shown.map(function (r) { return rowHTML(r); }).join("")
-            : '<tr class="emptyrow"><td colspan="10">Sin resultados para “' + esc(view.query) + '”.</td></tr>') +
+            : '<tr class="emptyrow"><td colspan="6">Sin resultados para “' + esc(view.query) + '”.</td></tr>') +
         "</tbody></table></div>" +
         '<footer class="foot">' +
-          '<span class="rule">' + pts + (m.qualify && m.qualify < state.pairs.length ? "Clasifican a la final los primeros " + m.qualify + ". " : "") + "Desempate por diferencia de chicos.</span>" +
-          '<span class="act"><span>Actualizada ' + esc(fmtDate(m.updatedAt)) + '</span>' +
+          '<span class="rule">' + regla + "</span>" +
+          '<span class="lnks"><span>Actualizada ' + esc(fmtDate(m.updatedAt)) + '</span>' +
             '<button class="lk" data-a="theme">' + (isDark() ? "Tema claro" : "Tema oscuro") + "</button>" +
             '<button class="lk" data-a="admin">Panel</button></span>' +
         "</footer>" +
@@ -364,14 +349,13 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
   }
   function softBoard() {
     var region = currentRegion();
-    var rows = computeRows(region.id);
+    var rows = rankRows(region.id);
     var shown = view.query ? rows.filter(function (r) { return matchQuery(r, view.query); }) : rows;
     var tb = app.querySelector("table.pos tbody");
     if (tb) tb.innerHTML = shown.length ? shown.map(function (r) { return rowHTML(r); }).join("")
-      : '<tr class="emptyrow"><td colspan="10">Sin resultados para “' + esc(view.query) + '”.</td></tr>';
+      : '<tr class="emptyrow"><td colspan="6">Sin resultados para “' + esc(view.query) + '”.</td></tr>';
     var b = app.querySelector(".bar span");
-    if (b) b.innerHTML = (view.query ? shown.length + " de " + rows.length + " parejas" : "") +
-      (state.meta.demo ? (view.query ? " · " : "") + '<span class="demo">datos de ejemplo</span>' : "");
+    if (b) b.textContent = view.query ? shown.length + " de " + rows.length + " parejas" : (state.meta.demo ? "datos de ejemplo" : "");
   }
 
   function wireBoard() {
@@ -482,8 +466,7 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
         ? '<input type="number" data-b="st.' + esc(ar) + "." + esc(p.id) + '.pts" value="' + s.pts + '">'
         : '<span class="gp">' + ptsOf(s) + "</span>";
       var f = function (k) { return '<td><input type="number" min="0" inputmode="numeric" data-b="st.' + esc(ar) + "." + esc(p.id) + "." + k + '" value="' + s[k] + '"></td>'; };
-      return '<tr data-pid="' + esc(p.id) + '"><td>' + esc(label(p)) + "</td>" +
-        f("pg") + f("pe") + f("pp") + f("cf") + f("cc") + "<td>" + pc + "</td></tr>";
+      return '<tr data-pid="' + esc(p.id) + '"><td>' + esc(label(p)) + "</td>" + f("pg") + f("pp") + "<td>" + pc + "</td></tr>";
     }).join("");
 
     app.innerHTML =
@@ -502,16 +485,14 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
           '<div class="fg">' +
             '<div class="fr"><label class="l">Temporada</label><input type="text" data-b="meta.season" value="' + esc(m.season) + '"></div>' +
             '<div class="fr"><label class="l">Fecha</label><input type="number" min="0" data-b="meta.fecha" value="' + m.fecha + '"></div>' +
-            '<div class="fr"><label class="l">Clasifican (0 = sin corte)</label><input type="number" min="0" data-b="meta.qualify" value="' + m.qualify + '"></div>' +
+            '<div class="fr"><label class="l">Puntos por victoria</label><input type="number" data-b="meta.winPoints" value="' + m.winPoints + '"' + (m.manualPts ? " disabled" : "") + "></div>" +
           "</div>" +
           '<div class="fg">' +
-            '<div class="fr"><label class="l">Pts. ganado</label><input type="number" data-b="meta.winPoints" value="' + m.winPoints + '"' + (m.manualPts ? " disabled" : "") + "></div>" +
-            '<div class="fr"><label class="l">Pts. empate</label><input type="number" data-b="meta.drawPoints" value="' + m.drawPoints + '"' + (m.manualPts ? " disabled" : "") + "></div>" +
-            '<div class="fr"><label class="l">Pts. perdido</label><input type="number" data-b="meta.lossPoints" value="' + m.lossPoints + '"' + (m.manualPts ? " disabled" : "") + "></div>" +
+            '<div class="fr"><label class="l">Clasifican a la final (0 = sin corte)</label><input type="number" min="0" data-b="meta.qualify" value="' + m.qualify + '"></div>' +
+            '<div class="fr"><label class="l">Sede al abrir</label><select data-b="meta.defaultRegion">' +
+              m.regions.map(function (r) { return '<option value="' + esc(r.id) + '"' + (r.id === m.defaultRegion ? " selected" : "") + ">" + esc(r.label) + "</option>"; }).join("") +
+            "</select></div>" +
           "</div>" +
-          '<div class="fr"><label class="l">Sede al abrir</label><select data-b="meta.defaultRegion">' +
-            m.regions.map(function (r) { return '<option value="' + esc(r.id) + '"' + (r.id === m.defaultRegion ? " selected" : "") + ">" + esc(r.label) + "</option>"; }).join("") +
-          "</select></div>" +
           '<label class="ck"><input type="checkbox" data-b="meta.manualPts"' + (m.manualPts ? " checked" : "") + "><span>Cargar los puntos a mano</span></label>" +
           '<label class="ck"><input type="checkbox" data-b="meta.demo"' + (m.demo ? " checked" : "") + '><span>Mostrar la marca “datos de ejemplo”</span></label>' +
         "</div>" +
@@ -527,7 +508,7 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
         '<span id="pm" style="margin-left:9px;font-size:11px;color:var(--ink-2)"></span></div>' +
 
         '<div class="g"><p class="gh">Parejas (' + state.pairs.length + ")</p>" +
-          '<div class="pe">' + pairLines + "</div>" +
+          '<div class="plist">' + pairLines + "</div>" +
           '<button class="btn o s" type="button" data-a="addpair" style="margin-top:9px">Agregar pareja</button>' +
           '<details class="bk" style="margin-top:10px"><summary>Importar lista</summary>' +
             '<p style="font-size:11px;color:var(--ink-2);margin:7px 0 5px">Una por línea: <code>Jugador 1; Jugador 2; nombre opcional</code>. Reemplaza todo y pone los resultados en cero.</p>' +
@@ -539,10 +520,10 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
           '<div class="fr" style="max-width:200px"><label class="l">Sede</label><select id="areg">' +
             m.regions.map(function (r) { return '<option value="' + esc(r.id) + '"' + (r.id === ar ? " selected" : "") + ">" + esc(r.label) + "</option>"; }).join("") +
           "</select></div>" +
-          '<div class="tw"><table class="grid"><thead><tr><th>Pareja</th><th>PG</th><th>PE</th><th>PP</th><th>CF</th><th>CC</th><th>' + (m.manualPts ? "Pts" : "Pts") + "</th></tr></thead><tbody>" +
+          '<div class="tw"><table class="grid"><thead><tr><th>Pareja</th><th>PG</th><th>PP</th><th>Pts</th></tr></thead><tbody>' +
             grid +
           "</tbody></table></div>" +
-          '<p style="font-size:11px;color:var(--ink-2);margin-top:7px">PJ = PG + PE + PP. CF / CC = chicos a favor / en contra.</p>' +
+          '<p style="font-size:11px;color:var(--ink-2);margin-top:7px">PJ = PG + PP. En el truco no hay empate.</p>' +
         "</div>" +
 
         '<div class="abar">' +
@@ -563,7 +544,7 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
     var p = path.split(".");
     if (p[0] === "meta") {
       var k = p[1];
-      if (k === "fecha" || k === "winPoints" || k === "drawPoints" || k === "lossPoints" || k === "qualify") state.meta[k] = num(value);
+      if (k === "fecha" || k === "winPoints" || k === "lossPoints" || k === "qualify") state.meta[k] = num(value);
       else if (k === "manualPts" || k === "demo") state.meta[k] = !!value;
       else state.meta[k] = String(value);
     } else if (p[0] === "region") {
@@ -576,7 +557,7 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
       var cell = state.standings[p[1]] && state.standings[p[1]][p[2]];
       if (cell) {
         var f = p[3];
-        if (f === "adj" || f === "pts") cell[f] = num(value);
+        if (f === "pts") cell.pts = num(value);
         else cell[f] = Math.max(0, num(value));
       }
     }
@@ -688,15 +669,15 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
       "</body>", "</html>", ""
     ].join("\n");
   }
-  function rankRegion(st, rid) {
+  function rankIds(st, rid) {
     var m = st.meta, tbl = st.standings[rid] || {};
     var rows = st.pairs.map(function (p) {
       var s = tbl[p.id] || blank();
-      var pg = num(s.pg), pe = num(s.pe), pp = num(s.pp), cf = num(s.cf), cc = num(s.cc);
-      var pts = m.manualPts ? num(s.pts) : (pg * m.winPoints + pe * m.drawPoints + pp * m.lossPoints + num(s.adj));
-      return { pid: p.id, pts: pts, dif: cf - cc, cf: cf, pg: pg, name: label(p) };
+      var pg = num(s.pg), pp = num(s.pp);
+      var pts = m.manualPts ? num(s.pts) : (pg * m.winPoints + pp * m.lossPoints);
+      return { pid: p.id, pts: pts, pg: pg, pp: pp, name: label(p) };
     });
-    rows.sort(function (a, b) { return b.pts - a.pts || b.dif - a.dif || b.cf - a.cf || b.pg - a.pg || a.name.localeCompare(b.name, "es"); });
+    rows.sort(function (a, b) { return b.pts - a.pts || b.pg - a.pg || a.pp - b.pp || a.name.localeCompare(b.name, "es"); });
     return rows;
   }
   function downloadBlob(name, text, type) {
@@ -719,7 +700,7 @@ code{font-size:11px;background:var(--surface);padding:1px 3px;border-radius:2px}
     var out = JSON.parse(JSON.stringify(state));
     normalize(out);
     if (nf) out.meta.regions.forEach(function (r) {
-      rankRegion(out, r.id).forEach(function (row, i) { out.standings[r.id][row.pid].prevRank = i + 1; });
+      rankIds(out, r.id).forEach(function (row, i) { out.standings[r.id][row.pid].prevRank = i + 1; });
     });
     out.meta.updatedAt = todayISO();
     var html = buildDocument(out);
