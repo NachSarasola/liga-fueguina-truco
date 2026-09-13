@@ -163,6 +163,10 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
 .info-block:first-child{border-top:0}
 .info-block h2{margin:0 0 8px;font:400 21px/1.05 var(--display);text-transform:uppercase;letter-spacing:.01em}
 .info-block p{margin:0;color:var(--ink-2);line-height:1.65;max-width:62ch}
+.info-block p.organizers{font:700 19px/1.3 var(--body);color:var(--ink);letter-spacing:.01em}
+.info-block p.venue{margin-top:8px;font-size:13.5px}
+.info-block p.venue a{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:2px solid var(--rule-2)}
+.info-block p.venue a:hover{border-color:var(--accent)}
 .socials{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .social{display:inline-flex;padding:8px 15px;border-radius:var(--radius-pill);background:var(--card-2);border:2px solid var(--rule-2);color:var(--ink);font:700 12.5px var(--body);text-decoration:none}
 .social:hover{border-color:var(--accent);color:var(--accent)}
@@ -242,10 +246,12 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
     if (!m.regions.some(function (r) { return r.id === m.defaultRegion; })) m.defaultRegion = m.regions[0].id;
     if (!m.adminHash) m.adminHash = hashPass("truco2026");
     m.info = m.info && typeof m.info === "object" ? m.info : {};
-    m.info.about = String(m.info.about != null ? m.info.about : "Torneo de truco por parejas (2 vs 2). Cupos limitados a 32 parejas. Se juega en Barra del Fuego, del 19 de septiembre al 19 de diciembre de 2026.\nInscripción: $40.000 por pareja, por fecha. Descuentos para jugadores.");
+    m.info.about = String(m.info.about != null ? m.info.about : "Torneo de truco por parejas (2 vs 2). Cupos limitados a 32 parejas. Se juega en Birra del Fuego, del 19 de septiembre al 19 de diciembre de 2026.\nInscripción: $40.000 por pareja, por fecha. Descuentos para jugadores.");
     m.info.premios = String(m.info.premios != null ? m.info.premios : "Campeón de liga: 1º $1.300.000 · 2º $300.000 · 3º regalos.\nCampeón de fecha: 1º $300.000 · 2º $100.000 · 3º regalos.");
     m.info.organiza = String(m.info.organiza || "Kevin Alexander y Truco Club");
-    m.info.sede = String(m.info.sede != null ? m.info.sede : "Barra del Fuego");
+    m.info.sede = String(m.info.sede != null ? m.info.sede : "Birra del Fuego");
+    m.info.direccion = String(m.info.direccion != null ? m.info.direccion : "Soberanía Nacional 1662, Ushuaia");
+    m.info.mapsUrl = String(m.info.mapsUrl != null ? m.info.mapsUrl : "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent("Birra del Fuego, Soberanía Nacional 1662, Ushuaia"));
     m.info.redes = String(m.info.redes != null ? m.info.redes : "truco_club\nkevinalexander.kr\nbirradelfuego");
 
     st.pairs = (Array.isArray(st.pairs) ? st.pairs : []).map(function (p, i) {
@@ -399,7 +405,9 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
         '<div class="info">' +
           '<section class="info-block"><h2>El torneo</h2><p>' + esc(m.info.about).split("\n").join("<br>") + "</p></section>" +
           '<section class="info-block"><h2>Premios</h2><p>' + esc(m.info.premios).split("\n").join("<br>") + "</p></section>" +
-          '<section class="info-block"><h2>Organiza</h2><p>' + esc(m.info.organiza) + '<br><span style="color:var(--ink-3)">Se juega en ' + esc(m.info.sede) + "</span></p>" +
+          '<section class="info-block"><h2>Organiza</h2>' +
+            '<p class="organizers">' + esc(m.info.organiza) + "</p>" +
+            '<p class="venue">Se juega en <a href="' + esc(m.info.mapsUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(m.info.sede) + "</a> — " + esc(m.info.direccion) + "</p>" +
             (socials ? '<div class="socials">' + socials + "</div>" : "") +
           "</section>" +
         "</div>" +
@@ -629,8 +637,12 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
         '<div class="g"><p class="gh">Información pública</p>' +
           '<div class="fr"><label class="l">Sobre el torneo</label><textarea data-b="meta.info.about">' + esc(m.info.about) + "</textarea></div>" +
           '<div class="fr"><label class="l">Premios</label><textarea data-b="meta.info.premios">' + esc(m.info.premios) + "</textarea></div>" +
-          '<div class="fg"><div class="fr"><label class="l">Organiza</label><input type="text" data-b="meta.info.organiza" value="' + esc(m.info.organiza) + '"></div>' +
-          '<div class="fr"><label class="l">Sede (dónde se juega)</label><input type="text" data-b="meta.info.sede" value="' + esc(m.info.sede) + '"></div></div>' +
+          '<div class="fg"><div class="fr"><label class="l">Organiza</label><input type="text" data-b="meta.info.organiza" value="' + esc(m.info.organiza) + '"></div></div>' +
+          '<div class="fg">' +
+            '<div class="fr"><label class="l">Sede (dónde se juega)</label><input type="text" data-b="meta.info.sede" value="' + esc(m.info.sede) + '"></div>' +
+            '<div class="fr"><label class="l">Dirección</label><input type="text" data-b="meta.info.direccion" value="' + esc(m.info.direccion) + '"></div>' +
+          "</div>" +
+          '<div class="fr"><label class="l">Link de Google Maps</label><input type="text" data-b="meta.info.mapsUrl" value="' + esc(m.info.mapsUrl) + '"></div>' +
           '<div class="fr"><label class="l">Redes de Instagram (una por línea, sin @)</label><textarea data-b="meta.info.redes">' + esc(m.info.redes) + "</textarea></div>" +
         "</div>" +
 
