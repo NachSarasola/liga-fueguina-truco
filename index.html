@@ -51,20 +51,12 @@ a{color:var(--accent)}
 
 .wrap{max-width:860px;margin:clamp(10px,3vw,26px) auto;background:var(--card);color:var(--ink);border-radius:clamp(12px,3vw,var(--radius-lg));border:clamp(2px,.6vw,3px) solid var(--card-border);padding:0 0 6px}
 .wrap>*{padding-left:clamp(14px,3.5vw,30px);padding-right:clamp(14px,3.5vw,30px)}
-.wrap>nav.regions{padding-left:0;padding-right:0}
 .admin.wrap{max-width:660px;padding-bottom:110px}
 
 header.mast{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding-top:22px!important;padding-bottom:14px!important}
 header.mast h1{margin:0;font:400 clamp(30px,6vw,46px)/.95 var(--display);letter-spacing:.01em;text-transform:uppercase}
 header.mast .sub{margin:5px 0 0;font:600 12.5px/1.4 var(--body);color:var(--ink-2)}
 header.mast .rnd{flex:0 0 auto;background:var(--brand);color:var(--brand-ink);font:800 12px/1 var(--body);letter-spacing:.03em;text-transform:uppercase;padding:8px 14px;border-radius:var(--radius-pill);white-space:nowrap;margin-top:2px}
-
-nav.regions{position:sticky;top:0;z-index:5;display:flex;gap:4px;background:var(--card);padding:8px 10px!important;border-bottom:3px solid var(--bg)}
-nav.regions button{appearance:none;flex:1 1 0;padding:9px 12px;background:none;border:0;border-radius:var(--radius-pill);font:700 12.5px/1 var(--body);letter-spacing:.02em;text-transform:uppercase;color:var(--ink-2);cursor:pointer;white-space:nowrap;transition:background .12s,color .12s}
-nav.regions button:hover{color:var(--ink)}
-nav.regions button[aria-selected="true"]{color:var(--brand-ink);background:var(--brand)}
-nav.regions button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media (max-width:520px){nav.regions button{padding:9px 6px;font-size:11px;letter-spacing:0}}
 
 .bar{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin:14px 0 6px;font:600 11.5px/1 var(--body);color:var(--ink-3);text-transform:uppercase;letter-spacing:.02em}
 input[type="search"]{appearance:none;width:210px;max-width:52vw;font:400 13px var(--body);color:var(--ink);padding:7px 12px;background:var(--card-2);border:2px solid var(--rule-2);border-radius:var(--radius-pill)}
@@ -89,7 +81,9 @@ table.pos tbody tr.r1 td.pos .n{display:inline-flex;align-items:center;justify-c
 @media (max-width:560px){table.pos tbody td.par .b{display:none}table.pos tbody td{padding:9px 8px}}
 
 footer.foot{margin:16px 0 26px;padding-top:14px!important;border-top:1px solid var(--rule);display:flex;flex-wrap:wrap;gap:6px 20px;justify-content:space-between;font-size:11.5px;color:var(--ink-2)}
-footer.foot .rule{max-width:60ch}
+footer.foot .rule{max-width:60ch;display:flex;flex-direction:column;gap:3px}
+footer.foot .rule-pts b{font-weight:800;color:var(--ink)}
+footer.foot .rule-tie{color:var(--ink-3);font-size:11px}
 footer.foot .credit{width:100%;font:400 22px/1 var(--script);color:var(--ink-3)}
 footer.foot .lnks{display:flex;gap:14px;white-space:nowrap}
 .madeby{width:100%;display:flex;align-items:center;justify-content:flex-end;gap:12px;margin-top:18px;padding-top:14px;border-top:1px solid var(--rule);text-decoration:none}
@@ -152,7 +146,7 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
 .hero-flyer-wrap{position:relative;display:inline-block;max-width:260px;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 22px 44px -16px rgba(0,0,0,.55);animation:card-flip .9s cubic-bezier(.22,1,.36,1) both}
 .hero-flyer-wrap::after{content:"";position:absolute;top:-60%;left:-35%;width:35%;height:220%;background:linear-gradient(115deg,transparent,rgba(255,255,255,.6),transparent);transform:translateX(-80%) rotate(0deg);animation:shine 1s ease .82s 1 both;pointer-events:none}
 .hero-flyer{display:block;width:100%;height:auto}
-.hero-tag{margin:20px 0 0;font:400 20px/1.3 var(--display);letter-spacing:.01em;max-width:26ch;opacity:0;animation:rise-in .5s ease-out .78s both}
+.hero-tag{margin:20px 0 0;font-family:var(--body);font-weight:600;font-style:italic;font-size:clamp(13px,4.2vw,19px);line-height:1.3;letter-spacing:.01em;color:var(--ink-2);white-space:nowrap;opacity:0;animation:rise-in .5s ease-out .78s both}
 .hero-sub{margin:8px 0 0;font:700 11.5px/1.4 var(--body);color:var(--ink-3);text-transform:uppercase;letter-spacing:.05em;opacity:0;animation:rise-in .5s ease-out .88s both}
 .hero-actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:20px}
 .hero-actions .btn{opacity:0;animation:rise-in .5s ease-out both}
@@ -169,8 +163,7 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
 .info-block:first-child{border-top:0}
 .info-block h2{margin:0 0 8px;font:400 21px/1.05 var(--display);text-transform:uppercase;letter-spacing:.01em}
 .info-block p{margin:0;color:var(--ink-2);line-height:1.65;max-width:62ch}
-.info-block p.organizers{font:700 19px/1.3 var(--body);color:var(--ink);letter-spacing:.01em}
-.info-block p.venue{margin-top:8px;font-size:13.5px}
+.info-block p.venue{font-size:13.5px}
 .info-block p.venue a{color:var(--accent);font-weight:700;text-decoration:none;border-bottom:2px solid var(--rule-2)}
 .info-block p.venue a:hover{border-color:var(--accent)}
 .info-block p.ptslabel{margin:14px 0 0;font-size:12.5px;color:var(--ink-3)}
@@ -185,7 +178,7 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
 </head>
 <body>
 <div id="app"><noscript>Esta página necesita JavaScript activado para mostrar la tabla de posiciones.</noscript></div>
-<script type="application/json" id="state">{"meta":{"leagueName":"Liga de Truco Ushuaia","subtitle":"","tagline":"32 parejas. Una temporada. Un campeón.","season":"2026","fecha":8,"totalFechas":14,"updatedAt":"2026-09-19","resultPts":{"campeon":100,"subcampeon":70,"semifinalista":45,"cuartofinalista":30,"r16":15,"r32":5,"ausente":0},"adminHash":"cyrb53:164fe814c289fb","regions":[{"id":"ushuaia","label":"Ushuaia"},{"id":"riogrande","label":"Río Grande"},{"id":"provincial","label":"Provincial"}],"defaultRegion":"provincial","demo":true,"info":{"about":"Truco argentino por parejas, eliminación directa: 32 parejas, 64 jugadores, hasta 4 mesas simultáneas, mazo español de 40 cartas y partidas a 30 puntos sin flor. Temporada de 14 fechas, los sábados, del 19 de septiembre al 19 de diciembre de 2026.\nInscripción: $40.000 por pareja, por fecha. Descuentos para jugadores.","premios":"Premiación anual — pozo de $1.600.000: Campeón $1.000.000 · Subcampeón $400.000 · Tercero $200.000.\nCada fecha además reparte puntos para la tabla de temporada (ver más abajo).","organiza":"Kevin Alexander y Truco Club","sede":"Birra del Fuego","direccion":"Soberanía Nacional 1662, Ushuaia","mapsUrl":"https://www.google.com/maps/search/?api=1&query=Birra%20del%20Fuego%2C%20Soberan%C3%ADa%20Nacional%201662%2C%20Ushuaia","redes":"truco_club\nkevinalexander.kr\nbirradelfuego"}},"pairs":[{"id":"p01","name":"","p1":"Andrés Paredes","p2":"Kevin Escobar"},{"id":"p02","name":"","p1":"Juan Barrios","p2":"Vanina Roldán"},{"id":"p03","name":"","p1":"Pablo Méndez","p2":"Damián Cáceres"},{"id":"p04","name":"","p1":"Ezequiel Figueroa","p2":"Valentina Castro"},{"id":"p05","name":"","p1":"Marcelo Luna","p2":"Emiliano Quiroga"},{"id":"p06","name":"","p1":"Cristian Rojas","p2":"Darío Ibáñez"},{"id":"p07","name":"","p1":"Hernán Ojeda","p2":"Nahuel Sosa"},{"id":"p08","name":"","p1":"Facundo Ávalos","p2":"Gonzalo Ferreyra"},{"id":"p09","name":"","p1":"Martín Bustos","p2":"Ramiro Ruiz"},{"id":"p10","name":"","p1":"Bruno Vera","p2":"Joaquín Ortiz"},{"id":"p11","name":"","p1":"Alan Sánchez","p2":"Lucía Vega"},{"id":"p12","name":"","p1":"Carla Villagra","p2":"Diego Cabrera"},{"id":"p13","name":"","p1":"Maximiliano Pérez","p2":"Romina Ledesma"},{"id":"p14","name":"","p1":"Camila Chávez","p2":"Walter Godoy"},{"id":"p15","name":"","p1":"Lucas Fernández","p2":"Julieta Ramírez"},{"id":"p16","name":"","p1":"Julián Gutiérrez","p2":"Natalia Coria"},{"id":"p17","name":"","p1":"Carolina Miranda","p2":"Nicolás Gómez"},{"id":"p18","name":"","p1":"Franco Toledo","p2":"Lautaro Álvarez"},{"id":"p19","name":"","p1":"Adrián Suárez","p2":"Gastón Ponce"},{"id":"p20","name":"","p1":"Leandro Villalba","p2":"Ignacio Benítez"},{"id":"p21","name":"","p1":"Noelia Molina","p2":"Daniela Herrera"},{"id":"p22","name":"","p1":"Yamila Cejas","p2":"Gabriela Correa"},{"id":"p23","name":"","p1":"Rodrigo Ríos","p2":"Rocío García"},{"id":"p24","name":"","p1":"Rubén Morales","p2":"Tomás Cardozo"},{"id":"p25","name":"","p1":"Guillermo Romero","p2":"Brenda Silva"},{"id":"p26","name":"","p1":"Santiago Díaz","p2":"Sofía Torres"},{"id":"p27","name":"","p1":"Mariano Bravo","p2":"Florencia Domínguez"},{"id":"p28","name":"","p1":"Paula Aguirre","p2":"Débora Peralta"},{"id":"p29","name":"","p1":"Agustina Rodríguez","p2":"Micaela Maldonado"},{"id":"p30","name":"","p1":"Soledad López","p2":"Matías Pereyra"},{"id":"p31","name":"","p1":"Antonella Acosta","p2":"Federico Almada"},{"id":"p32","name":"","p1":"Sergio Núñez","p2":"Melina Paredes"}],"standings":{"ushuaia":{"p01":{"pts":320,"titulos":0,"finales":2,"semis":4,"fj":7,"prevRank":12},"p02":{"pts":220,"titulos":0,"finales":1,"semis":2,"fj":8,"prevRank":29},"p03":{"pts":250,"titulos":0,"finales":1,"semis":3,"fj":7,"prevRank":22},"p04":{"pts":165,"titulos":0,"finales":0,"semis":1,"fj":7,"prevRank":27},"p05":{"pts":380,"titulos":2,"finales":2,"semis":4,"fj":8,"prevRank":6},"p06":{"pts":175,"titulos":0,"finales":1,"semis":1,"fj":8,"prevRank":28},"p07":{"pts":255,"titulos":0,"finales":0,"semis":1,"fj":8,"prevRank":21},"p08":{"pts":210,"titulos":0,"finales":0,"semis":1,"fj":7,"prevRank":26},"p09":{"pts":410,"titulos":0,"finales":2,"semis":8,"fj":8,"prevRank":5},"p10":{"pts":480,"titulos":2,"finales":3,"semis":7,"fj":8,"prevRank":2},"p11":{"pts":475,"titulos":1,"finales":4,"semis":7,"fj":8,"prevRank":3},"p12":{"pts":365,"titulos":1,"finales":2,"semis":3,"fj":8,"prevRank":11},"p13":{"pts":270,"titulos":0,"finales":0,"semis":5,"fj":7,"prevRank":19},"p14":{"pts":290,"titulos":0,"finales":2,"semis":2,"fj":8,"prevRank":17},"p15":{"pts":240,"titulos":0,"finales":0,"semis":4,"fj":6,"prevRank":24},"p16":{"pts":395,"titulos":2,"finales":2,"semis":4,"fj":8,"prevRank":7},"p17":{"pts":320,"titulos":1,"finales":2,"semis":3,"fj":8,"prevRank":10},"p18":{"pts":225,"titulos":0,"finales":0,"semis":3,"fj":6,"prevRank":25},"p19":{"pts":355,"titulos":1,"finales":1,"semis":4,"fj":8,"prevRank":9},"p20":{"pts":270,"titulos":0,"finales":1,"semis":4,"fj":7,"prevRank":18},"p21":{"pts":335,"titulos":1,"finales":2,"semis":4,"fj":7,"prevRank":8},"p22":{"pts":490,"titulos":4,"finales":4,"semis":4,"fj":8,"prevRank":1},"p23":{"pts":250,"titulos":1,"finales":1,"semis":2,"fj":7,"prevRank":23},"p24":{"pts":310,"titulos":1,"finales":1,"semis":3,"fj":7,"prevRank":13},"p25":{"pts":150,"titulos":0,"finales":0,"semis":0,"fj":7,"prevRank":31},"p26":{"pts":210,"titulos":0,"finales":0,"semis":2,"fj":7,"prevRank":30},"p27":{"pts":465,"titulos":2,"finales":3,"semis":6,"fj":8,"prevRank":4},"p28":{"pts":240,"titulos":0,"finales":1,"semis":4,"fj":7,"prevRank":20},"p29":{"pts":305,"titulos":0,"finales":2,"semis":5,"fj":6,"prevRank":14},"p30":{"pts":295,"titulos":1,"finales":1,"semis":4,"fj":7,"prevRank":16},"p31":{"pts":120,"titulos":0,"finales":0,"semis":0,"fj":6,"prevRank":32},"p32":{"pts":290,"titulos":0,"finales":2,"semis":4,"fj":6,"prevRank":15}},"riogrande":{"p01":{"pts":305,"titulos":1,"finales":2,"semis":3,"fj":7,"prevRank":14},"p02":{"pts":300,"titulos":0,"finales":3,"semis":3,"fj":8,"prevRank":16},"p03":{"pts":210,"titulos":0,"finales":0,"semis":2,"fj":6,"prevRank":32},"p04":{"pts":210,"titulos":0,"finales":0,"semis":2,"fj":8,"prevRank":29},"p05":{"pts":295,"titulos":1,"finales":1,"semis":3,"fj":8,"prevRank":17},"p06":{"pts":265,"titulos":0,"finales":2,"semis":3,"fj":7,"prevRank":23},"p07":{"pts":325,"titulos":1,"finales":1,"semis":2,"fj":8,"prevRank":10},"p08":{"pts":225,"titulos":0,"finales":0,"semis":1,"fj":7,"prevRank":27},"p09":{"pts":250,"titulos":0,"finales":1,"semis":1,"fj":7,"prevRank":24},"p10":{"pts":370,"titulos":1,"finales":1,"semis":5,"fj":8,"prevRank":8},"p11":{"pts":310,"titulos":0,"finales":1,"semis":4,"fj":8,"prevRank":15},"p12":{"pts":405,"titulos":2,"finales":3,"semis":4,"fj":7,"prevRank":1},"p13":{"pts":295,"titulos":1,"finales":1,"semis":2,"fj":8,"prevRank":18},"p14":{"pts":335,"titulos":2,"finales":2,"semis":3,"fj":7,"prevRank":5},"p15":{"pts":225,"titulos":0,"finales":0,"semis":1,"fj":8,"prevRank":28},"p16":{"pts":195,"titulos":0,"finales":1,"semis":1,"fj":8,"prevRank":31},"p17":{"pts":250,"titulos":1,"finales":1,"semis":3,"fj":6,"prevRank":20},"p18":{"pts":405,"titulos":2,"finales":3,"semis":3,"fj":8,"prevRank":6},"p19":{"pts":310,"titulos":0,"finales":1,"semis":4,"fj":8,"prevRank":13},"p20":{"pts":120,"titulos":0,"finales":0,"semis":0,"fj":6,"prevRank":30},"p21":{"pts":255,"titulos":0,"finales":0,"semis":2,"fj":8,"prevRank":22},"p22":{"pts":435,"titulos":2,"finales":3,"semis":6,"fj":7,"prevRank":3},"p23":{"pts":250,"titulos":0,"finales":1,"semis":2,"fj":7,"prevRank":26},"p24":{"pts":380,"titulos":2,"finales":2,"semis":4,"fj":7,"prevRank":2},"p25":{"pts":350,"titulos":0,"finales":2,"semis":4,"fj":8,"prevRank":7},"p26":{"pts":310,"titulos":1,"finales":1,"semis":3,"fj":8,"prevRank":12},"p27":{"pts":265,"titulos":1,"finales":1,"semis":2,"fj":6,"prevRank":19},"p28":{"pts":315,"titulos":0,"finales":3,"semis":3,"fj":8,"prevRank":11},"p29":{"pts":350,"titulos":1,"finales":2,"semis":4,"fj":7,"prevRank":4},"p30":{"pts":225,"titulos":0,"finales":0,"semis":2,"fj":7,"prevRank":25},"p31":{"pts":335,"titulos":1,"finales":2,"semis":5,"fj":7,"prevRank":9},"p32":{"pts":280,"titulos":1,"finales":1,"semis":2,"fj":7,"prevRank":21}},"provincial":{"p01":{"pts":420,"titulos":2,"finales":3,"semis":4,"fj":8,"prevRank":2},"p02":{"pts":145,"titulos":0,"finales":0,"semis":0,"fj":8,"prevRank":32},"p03":{"pts":195,"titulos":0,"finales":0,"semis":2,"fj":7,"prevRank":27},"p04":{"pts":265,"titulos":0,"finales":1,"semis":4,"fj":7,"prevRank":15},"p05":{"pts":280,"titulos":1,"finales":1,"semis":3,"fj":6,"prevRank":12},"p06":{"pts":280,"titulos":0,"finales":1,"semis":4,"fj":7,"prevRank":14},"p07":{"pts":390,"titulos":0,"finales":3,"semis":5,"fj":8,"prevRank":6},"p08":{"pts":415,"titulos":0,"finales":4,"semis":5,"fj":8,"prevRank":5},"p09":{"pts":485,"titulos":1,"finales":5,"semis":6,"fj":8,"prevRank":1},"p10":{"pts":265,"titulos":0,"finales":1,"semis":4,"fj":6,"prevRank":16},"p11":{"pts":450,"titulos":3,"finales":3,"semis":5,"fj":7,"prevRank":4},"p12":{"pts":310,"titulos":0,"finales":1,"semis":3,"fj":8,"prevRank":13},"p13":{"pts":235,"titulos":0,"finales":2,"semis":3,"fj":7,"prevRank":21},"p14":{"pts":325,"titulos":1,"finales":1,"semis":4,"fj":8,"prevRank":10},"p15":{"pts":325,"titulos":0,"finales":1,"semis":4,"fj":8,"prevRank":11},"p16":{"pts":175,"titulos":0,"finales":1,"semis":2,"fj":6,"prevRank":29},"p17":{"pts":365,"titulos":0,"finales":2,"semis":6,"fj":8,"prevRank":7},"p18":{"pts":265,"titulos":0,"finales":1,"semis":3,"fj":7,"prevRank":17},"p19":{"pts":225,"titulos":0,"finales":0,"semis":2,"fj":8,"prevRank":23},"p20":{"pts":150,"titulos":0,"finales":1,"semis":1,"fj":7,"prevRank":30},"p21":{"pts":165,"titulos":0,"finales":0,"semis":1,"fj":7,"prevRank":26},"p22":{"pts":350,"titulos":1,"finales":2,"semis":4,"fj":8,"prevRank":8},"p23":{"pts":195,"titulos":0,"finales":0,"semis":3,"fj":6,"prevRank":25},"p24":{"pts":250,"titulos":0,"finales":1,"semis":3,"fj":6,"prevRank":19},"p25":{"pts":255,"titulos":0,"finales":0,"semis":3,"fj":8,"prevRank":18},"p26":{"pts":190,"titulos":0,"finales":1,"semis":2,"fj":6,"prevRank":28},"p27":{"pts":455,"titulos":2,"finales":2,"semis":7,"fj":8,"prevRank":3},"p28":{"pts":230,"titulos":0,"finales":1,"semis":3,"fj":8,"prevRank":22},"p29":{"pts":240,"titulos":0,"finales":0,"semis":1,"fj":8,"prevRank":20},"p30":{"pts":135,"titulos":0,"finales":0,"semis":0,"fj":7,"prevRank":31},"p31":{"pts":220,"titulos":1,"finales":1,"semis":2,"fj":6,"prevRank":24},"p32":{"pts":340,"titulos":1,"finales":1,"semis":4,"fj":8,"prevRank":9}}}}</script>
+<script type="application/json" id="state">{"meta":{"leagueName":"Liga de Truco Ushuaia","subtitle":"","tagline":"32 parejas. Una temporada. Un campeón.","season":"2026","fecha":8,"totalFechas":14,"updatedAt":"2026-09-19","resultPts":{"campeon":100,"subcampeon":70,"semifinalista":45,"cuartofinalista":30,"r16":15,"r32":5,"ausente":0},"adminHash":"cyrb53:164fe814c289fb","regions":[{"id":"ushuaia","label":"Ushuaia"}],"defaultRegion":"ushuaia","demo":true,"info":{"about":"Truco argentino por parejas, eliminación directa: 32 parejas, 64 jugadores, hasta 4 mesas simultáneas, mazo español de 40 cartas y partidas a 30 puntos sin flor. Temporada de 14 fechas, los sábados, del 19 de septiembre al 19 de diciembre de 2026.\nInscripción: $40.000 por pareja, por fecha. Descuentos para jugadores.","premios":"Campeón de liga: 1º $1.300.000 · 2º $300.000 · 3º regalos.\nCampeón de fecha: 1º $300.000 · 2º $100.000 · 3º regalos.","organiza":"Kevin Alexander y Truco Club","sede":"Birra del Fuego","direccion":"Soberanía Nacional 1662, Ushuaia","mapsUrl":"https://www.google.com/maps/search/?api=1&query=Birra%20del%20Fuego%2C%20Soberan%C3%ADa%20Nacional%201662%2C%20Ushuaia","redes":"truco_club\nkevinalexander.kr\nbirradelfuego"}},"pairs":[{"id":"p01","name":"","p1":"Andrés Paredes","p2":"Kevin Escobar"},{"id":"p02","name":"","p1":"Juan Barrios","p2":"Vanina Roldán"},{"id":"p03","name":"","p1":"Pablo Méndez","p2":"Damián Cáceres"},{"id":"p04","name":"","p1":"Ezequiel Figueroa","p2":"Valentina Castro"},{"id":"p05","name":"","p1":"Marcelo Luna","p2":"Emiliano Quiroga"},{"id":"p06","name":"","p1":"Cristian Rojas","p2":"Darío Ibáñez"},{"id":"p07","name":"","p1":"Hernán Ojeda","p2":"Nahuel Sosa"},{"id":"p08","name":"","p1":"Facundo Ávalos","p2":"Gonzalo Ferreyra"},{"id":"p09","name":"","p1":"Martín Bustos","p2":"Ramiro Ruiz"},{"id":"p10","name":"","p1":"Bruno Vera","p2":"Joaquín Ortiz"},{"id":"p11","name":"","p1":"Alan Sánchez","p2":"Lucía Vega"},{"id":"p12","name":"","p1":"Carla Villagra","p2":"Diego Cabrera"},{"id":"p13","name":"","p1":"Maximiliano Pérez","p2":"Romina Ledesma"},{"id":"p14","name":"","p1":"Camila Chávez","p2":"Walter Godoy"},{"id":"p15","name":"","p1":"Lucas Fernández","p2":"Julieta Ramírez"},{"id":"p16","name":"","p1":"Julián Gutiérrez","p2":"Natalia Coria"},{"id":"p17","name":"","p1":"Carolina Miranda","p2":"Nicolás Gómez"},{"id":"p18","name":"","p1":"Franco Toledo","p2":"Lautaro Álvarez"},{"id":"p19","name":"","p1":"Adrián Suárez","p2":"Gastón Ponce"},{"id":"p20","name":"","p1":"Leandro Villalba","p2":"Ignacio Benítez"},{"id":"p21","name":"","p1":"Noelia Molina","p2":"Daniela Herrera"},{"id":"p22","name":"","p1":"Yamila Cejas","p2":"Gabriela Correa"},{"id":"p23","name":"","p1":"Rodrigo Ríos","p2":"Rocío García"},{"id":"p24","name":"","p1":"Rubén Morales","p2":"Tomás Cardozo"},{"id":"p25","name":"","p1":"Guillermo Romero","p2":"Brenda Silva"},{"id":"p26","name":"","p1":"Santiago Díaz","p2":"Sofía Torres"},{"id":"p27","name":"","p1":"Mariano Bravo","p2":"Florencia Domínguez"},{"id":"p28","name":"","p1":"Paula Aguirre","p2":"Débora Peralta"},{"id":"p29","name":"","p1":"Agustina Rodríguez","p2":"Micaela Maldonado"},{"id":"p30","name":"","p1":"Soledad López","p2":"Matías Pereyra"},{"id":"p31","name":"","p1":"Antonella Acosta","p2":"Federico Almada"},{"id":"p32","name":"","p1":"Sergio Núñez","p2":"Melina Paredes"}],"standings":{"ushuaia":{"p01":{"pts":320,"titulos":0,"finales":2,"semis":4,"fj":7,"prevRank":12},"p02":{"pts":220,"titulos":0,"finales":1,"semis":2,"fj":8,"prevRank":29},"p03":{"pts":250,"titulos":0,"finales":1,"semis":3,"fj":7,"prevRank":22},"p04":{"pts":165,"titulos":0,"finales":0,"semis":1,"fj":7,"prevRank":27},"p05":{"pts":380,"titulos":2,"finales":2,"semis":4,"fj":8,"prevRank":6},"p06":{"pts":175,"titulos":0,"finales":1,"semis":1,"fj":8,"prevRank":28},"p07":{"pts":255,"titulos":0,"finales":0,"semis":1,"fj":8,"prevRank":21},"p08":{"pts":210,"titulos":0,"finales":0,"semis":1,"fj":7,"prevRank":26},"p09":{"pts":410,"titulos":0,"finales":2,"semis":8,"fj":8,"prevRank":5},"p10":{"pts":480,"titulos":2,"finales":3,"semis":7,"fj":8,"prevRank":2},"p11":{"pts":475,"titulos":1,"finales":4,"semis":7,"fj":8,"prevRank":3},"p12":{"pts":365,"titulos":1,"finales":2,"semis":3,"fj":8,"prevRank":11},"p13":{"pts":270,"titulos":0,"finales":0,"semis":5,"fj":7,"prevRank":19},"p14":{"pts":290,"titulos":0,"finales":2,"semis":2,"fj":8,"prevRank":17},"p15":{"pts":240,"titulos":0,"finales":0,"semis":4,"fj":6,"prevRank":24},"p16":{"pts":395,"titulos":2,"finales":2,"semis":4,"fj":8,"prevRank":7},"p17":{"pts":320,"titulos":1,"finales":2,"semis":3,"fj":8,"prevRank":10},"p18":{"pts":225,"titulos":0,"finales":0,"semis":3,"fj":6,"prevRank":25},"p19":{"pts":355,"titulos":1,"finales":1,"semis":4,"fj":8,"prevRank":9},"p20":{"pts":270,"titulos":0,"finales":1,"semis":4,"fj":7,"prevRank":18},"p21":{"pts":335,"titulos":1,"finales":2,"semis":4,"fj":7,"prevRank":8},"p22":{"pts":490,"titulos":4,"finales":4,"semis":4,"fj":8,"prevRank":1},"p23":{"pts":250,"titulos":1,"finales":1,"semis":2,"fj":7,"prevRank":23},"p24":{"pts":310,"titulos":1,"finales":1,"semis":3,"fj":7,"prevRank":13},"p25":{"pts":150,"titulos":0,"finales":0,"semis":0,"fj":7,"prevRank":31},"p26":{"pts":210,"titulos":0,"finales":0,"semis":2,"fj":7,"prevRank":30},"p27":{"pts":465,"titulos":2,"finales":3,"semis":6,"fj":8,"prevRank":4},"p28":{"pts":240,"titulos":0,"finales":1,"semis":4,"fj":7,"prevRank":20},"p29":{"pts":305,"titulos":0,"finales":2,"semis":5,"fj":6,"prevRank":14},"p30":{"pts":295,"titulos":1,"finales":1,"semis":4,"fj":7,"prevRank":16},"p31":{"pts":120,"titulos":0,"finales":0,"semis":0,"fj":6,"prevRank":32},"p32":{"pts":290,"titulos":0,"finales":2,"semis":4,"fj":6,"prevRank":15}}}}</script>
 <script id="logic">
 (function () {
   "use strict";
@@ -251,17 +244,12 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
     m.demo = !!m.demo;
     m.resultPts = m.resultPts && typeof m.resultPts === "object" ? m.resultPts : {};
     RESULT_KEYS.forEach(function (k) { m.resultPts[k] = hasInt(m.resultPts[k]) ? num(m.resultPts[k]) : RESULT_DEFAULTS[k]; });
-    if (!Array.isArray(m.regions) || !m.regions.length) {
-      m.regions = [{ id: "ushuaia", label: "Ushuaia" }, { id: "riogrande", label: "Río Grande" }, { id: "provincial", label: "Provincial" }];
-    }
-    m.regions = m.regions.map(function (r, i) {
-      return { id: String(r && r.id ? r.id : "r" + i), label: String(r && r.label ? r.label : (r && r.id) || "Sede " + (i + 1)) };
-    });
-    if (!m.regions.some(function (r) { return r.id === m.defaultRegion; })) m.defaultRegion = m.regions[0].id;
+    m.regions = [{ id: "ushuaia", label: "Ushuaia" }];
+    m.defaultRegion = "ushuaia";
     if (!m.adminHash) m.adminHash = hashPass("truco2026");
     m.info = m.info && typeof m.info === "object" ? m.info : {};
     m.info.about = String(m.info.about != null ? m.info.about : "Truco argentino por parejas, eliminación directa: 32 parejas, 64 jugadores, hasta 4 mesas simultáneas, mazo español de 40 cartas y partidas a 30 puntos sin flor. Temporada de 14 fechas, los sábados, del 19 de septiembre al 19 de diciembre de 2026.\nInscripción: $40.000 por pareja, por fecha. Descuentos para jugadores.");
-    m.info.premios = String(m.info.premios != null ? m.info.premios : "Premiación anual — pozo de $1.600.000: Campeón $1.000.000 · Subcampeón $400.000 · Tercero $200.000.\nCada fecha además reparte puntos para la tabla de temporada.");
+    m.info.premios = String(m.info.premios != null ? m.info.premios : "Campeón de liga: 1º $1.300.000 · 2º $300.000 · 3º regalos.\nCampeón de fecha: 1º $300.000 · 2º $100.000 · 3º regalos.");
     m.info.organiza = String(m.info.organiza || "Kevin Alexander y Truco Club");
     m.info.sede = String(m.info.sede != null ? m.info.sede : "Birra del Fuego");
     m.info.direccion = String(m.info.direccion != null ? m.info.direccion : "Soberanía Nacional 1662, Ushuaia");
@@ -276,9 +264,10 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
       };
     });
 
-    st.standings = st.standings && typeof st.standings === "object" ? st.standings : {};
+    var oldStandings = st.standings && typeof st.standings === "object" ? st.standings : {};
+    st.standings = {};
     m.regions.forEach(function (r) {
-      var src = st.standings[r.id] && typeof st.standings[r.id] === "object" ? st.standings[r.id] : {};
+      var src = oldStandings[r.id] && typeof oldStandings[r.id] === "object" ? oldStandings[r.id] : {};
       var out = {};
       st.pairs.forEach(function (p) {
         var s = src[p.id] || {};
@@ -401,8 +390,7 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
             '<button class="btn big o" type="button" data-a="board">Tabla de posiciones</button>' +
           "</div>" +
         "</div>" +
-        '<footer class="foot home-foot">' + creditHTML(m) +
-          '<span class="lnks"><button class="lk" type="button" data-a="admin">Panel</button></span>' +
+        '<footer class="foot home-foot">' +
           madeByHTML() +
         "</footer>" +
       "</div>";
@@ -428,15 +416,13 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
             '<p class="ptslabel">Puntos que suma cada pareja según lo que hizo en la fecha:</p>' +
             '<ul class="ptslist">' + ptsList + "</ul>" +
           "</section>" +
-          '<section class="info-block"><h2>Organiza</h2>' +
-            '<p class="organizers">' + esc(m.info.organiza) + "</p>" +
+          '<section class="info-block"><h2>Sede</h2>' +
             '<p class="venue">Se juega en <a href="' + esc(m.info.mapsUrl) + '" target="_blank" rel="noopener noreferrer">' + esc(m.info.sede) + "</a> — " + esc(m.info.direccion) + "</p>" +
             (socials ? '<div class="socials">' + socials + "</div>" : "") +
           "</section>" +
         "</div>" +
-        '<footer class="foot">' + creditHTML(m) +
-          '<span class="lnks"><button class="lk" type="button" data-a="board">Tabla de posiciones</button>' +
-            '<button class="lk" type="button" data-a="admin">Panel</button></span>' +
+        '<footer class="foot">' +
+          '<span class="lnks"><button class="lk" type="button" data-a="board">Tabla de posiciones</button></span>' +
           madeByHTML() +
         "</footer>" +
       "</div>";
@@ -466,20 +452,14 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
     var rows = rankRows(region.id);
     var shown = view.query ? rows.filter(function (r) { return matchQuery(r, view.query); }) : rows;
 
-    var tabs = m.regions.map(function (r) {
-      var on = r.id === region.id;
-      return '<button role="tab" id="t-' + esc(r.id) + '" aria-selected="' + on + '" tabindex="' + (on ? "0" : "-1") + '" data-r="' + esc(r.id) + '">' + esc(r.label) + "</button>";
-    }).join("");
-
     var rp = m.resultPts;
-    var regla = "Puntos por fecha: " + rp.campeon + " campeón · " + rp.subcampeon + " subcampeón · " + rp.semifinalista +
-      " semifinal · " + rp.cuartofinalista + " cuartos · " + rp.r16 + " 16avos · " + rp.r32 + " 32avos. " +
-      "Desempate: fechas ganadas, luego finales y semifinales.";
+    var reglaPts = "<b>" + rp.campeon + "</b> campeón · <b>" + rp.subcampeon + "</b> subcampeón · <b>" + rp.semifinalista +
+      "</b> semifinal · <b>" + rp.cuartofinalista + "</b> cuartos · <b>" + rp.r16 + "</b> 16avos · <b>" + rp.r32 + "</b> 32avos";
+    var reglaTie = "Desempate: fechas ganadas, luego finales y semifinales.";
 
     app.innerHTML =
       '<div class="wrap">' +
         mastheadHTML(m, true) +
-        '<nav class="regions" role="tablist" aria-label="Sede">' + tabs + "</nav>" +
         '<div class="bar">' +
           "<span>" + (view.query ? shown.length + " de " + rows.length + " parejas" : (m.demo ? "datos de ejemplo" : "")) + "</span>" +
           '<input type="search" id="q" placeholder="Buscar jugador o pareja" value="' + esc(view.query) + '" autocomplete="off" spellcheck="false">' +
@@ -492,11 +472,10 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
             : '<tr class="emptyrow"><td colspan="5">Sin resultados para “' + esc(view.query) + '”.</td></tr>') +
         "</tbody></table></div>" +
         '<footer class="foot">' +
-          '<span class="rule">' + regla + "</span>" +
+          '<div class="rule"><span class="rule-pts">' + reglaPts + '</span><span class="rule-tie">' + reglaTie + "</span></div>" +
           '<span class="lnks"><span>Actualizada ' + esc(fmtDate(m.updatedAt)) + '</span>' +
             '<button class="lk" data-a="info">Información</button>' +
-            '<button class="lk" data-a="theme">' + (isDark() ? "Tema claro" : "Tema oscuro") + "</button>" +
-            '<button class="lk" data-a="admin">Panel</button></span>' +
+            '<button class="lk" data-a="theme">' + (isDark() ? "Tema claro" : "Tema oscuro") + "</button></span>" +
           creditHTML(m) +
           madeByHTML() +
         "</footer>" +
@@ -520,28 +499,9 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
   }
 
   function wireBoard() {
-    var tabs = Array.prototype.slice.call(app.querySelectorAll("nav.regions button"));
-    tabs.forEach(function (btn) {
-      btn.addEventListener("click", function () { setRegion(btn.getAttribute("data-r"), false); });
-      btn.addEventListener("keydown", function (e) {
-        if (e.key !== "ArrowRight" && e.key !== "ArrowLeft") return;
-        e.preventDefault();
-        var i = tabs.indexOf(btn);
-        var j = (i + (e.key === "ArrowRight" ? 1 : tabs.length - 1)) % tabs.length;
-        setRegion(tabs[j].getAttribute("data-r"), true);
-      });
-    });
     var q = app.querySelector("#q");
     if (q) q.addEventListener("input", function () { view.query = q.value; softBoard(); });
     navClicks(app);
-  }
-  function setRegion(id, focusTab) {
-    if (!regionById(id)) return;
-    view.region = id; view.query = "";
-    try { localStorage.setItem(LS.region, id); } catch (e) {}
-    setHash(id);
-    renderBoard();
-    if (focusTab) { var t = app.querySelector('nav.regions button[aria-selected="true"]'); if (t) t.focus(); }
   }
   function setHash(h) {
     if ("#" + h === location.hash) return;
@@ -646,9 +606,6 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
             '<div class="fr"><label class="l">Fecha actual</label><input type="number" min="0" data-b="meta.fecha" value="' + m.fecha + '"></div>' +
             '<div class="fr"><label class="l">Fechas totales</label><input type="number" min="1" data-b="meta.totalFechas" value="' + m.totalFechas + '"></div>' +
           "</div>" +
-          '<div class="fr"><label class="l">Sede al abrir</label><select data-b="meta.defaultRegion">' +
-            m.regions.map(function (r) { return '<option value="' + esc(r.id) + '"' + (r.id === m.defaultRegion ? " selected" : "") + ">" + esc(r.label) + "</option>"; }).join("") +
-          "</select></div>" +
           '<label class="ck"><input type="checkbox" data-b="meta.demo"' + (m.demo ? " checked" : "") + '><span>Mostrar la marca “datos de ejemplo”</span></label>' +
         "</div>" +
 
@@ -657,10 +614,6 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
             return '<div class="fr"><label class="l">' + esc(RESULT_LABELS[k]) + '</label><input type="number" min="0" data-b="meta.resultPts.' + k + '" value="' + m.resultPts[k] + '"></div>';
           }).join("") + "</div>" +
         "</div>" +
-
-        '<div class="g"><p class="gh">Sedes</p><div class="fg">' +
-          m.regions.map(function (r) { return '<div class="fr"><label class="l">' + esc(r.id) + '</label><input type="text" data-b="region.' + esc(r.id) + '.label" value="' + esc(r.label) + '"></div>'; }).join("") +
-        "</div></div>" +
 
         '<div class="g"><p class="gh">Información pública</p>' +
           '<div class="fr"><label class="l">Sobre el torneo</label><textarea data-b="meta.info.about">' + esc(m.info.about) + "</textarea></div>" +
@@ -690,10 +643,7 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
         "</div>" +
 
         '<div class="g"><p class="gh">Resultado de la fecha</p>' +
-          '<div class="fr" style="max-width:200px"><label class="l">Sede</label><select id="areg">' +
-            m.regions.map(function (r) { return '<option value="' + esc(r.id) + '"' + (r.id === ar ? " selected" : "") + ">" + esc(r.label) + "</option>"; }).join("") +
-          "</select></div>" +
-          '<p style="font-size:11.5px;color:var(--ink-2);margin:10px 0 0">Elegí qué hizo cada pareja hoy en esta sede y aplicá. Los puntos se suman al acumulado de temporada.</p>' +
+          '<p style="font-size:11.5px;color:var(--ink-2);margin:0">Elegí qué hizo cada pareja hoy y aplicá. Los puntos se suman al acumulado de temporada.</p>' +
           '<div class="tw"><table class="grid"><thead><tr><th>Pareja</th><th>Pts acum.</th><th>Resultado de hoy</th></tr></thead><tbody>' +
             grid +
           "</tbody></table></div>" +
@@ -727,8 +677,6 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
       else if (k === "fecha" || k === "totalFechas") state.meta[k] = num(value);
       else if (k === "demo") state.meta[k] = !!value;
       else state.meta[k] = String(value);
-    } else if (p[0] === "region") {
-      var r = regionById(p[1]); if (r) r.label = String(value);
     } else if (p[0] === "pair") {
       var pr = null;
       for (var i = 0; i < state.pairs.length; i++) if (state.pairs[i].id === p[1]) pr = state.pairs[i];
@@ -750,7 +698,6 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
     });
     root.addEventListener("change", function (e) {
       var el = e.target;
-      if (el.id === "areg") { view.adminRegion = el.value; view.fechaPicks = {}; return renderAdmin(); }
       if (el.getAttribute && el.getAttribute("data-fecha-pick")) {
         view.fechaPicks = view.fechaPicks || {};
         view.fechaPicks[el.getAttribute("data-fecha-pick")] = el.value;
