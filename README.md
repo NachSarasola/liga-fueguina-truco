@@ -1,8 +1,8 @@
 # Liga Fueguina de Truco — tabla de posiciones
 
-Una sola página (`index.html`) que muestra la tabla de posiciones de la liga con
-tres vistas —Ushuaia, Río Grande y Provincial— y un panel de administración para
-cargar los resultados. No necesita servidor, base de datos ni cuentas.
+Una sola página (`index.html`) que muestra la tabla de posiciones de la Liga de
+Truco Ushuaia y un panel de administración para cargar los resultados. No
+necesita servidor, base de datos ni cuentas.
 
 Demo en vivo: https://claude.ai/code/artifact/1d98de2a-d51c-4ffa-a67b-b64dfe7bc5ab
 
@@ -21,7 +21,8 @@ Pasás ese link a los jugadores. Eso es todo lo que ven ellos.
 
 ## 2. Entrar al panel
 
-`https://tu-sitio/#admin` — o el enlace **Panel** abajo de la tabla.
+`https://tu-sitio/#admin` — no hay ningún botón visible que lleve ahí a
+propósito, es la puerta de entrada del administrador.
 
 Contraseña inicial: **`truco2026`**
 
@@ -39,16 +40,14 @@ que cargás es **qué le pasó a cada pareja** — el resultado ya trae los punt
 fijos de esa ronda.
 
 1. Entrás al panel, sección *Resultado de la fecha*.
-2. Elegís la sede.
-3. Para cada pareja, elegís su resultado de hoy: Campeón, Subcampeón,
+2. Para cada pareja, elegís su resultado de hoy: Campeón, Subcampeón,
    Semifinalista, Cuartofinalista, Eliminado en 16avos, Eliminado en 32avos, o
    dejás "Sin cambios" si no jugó. Los puntos entre paréntesis se suman al
    acumulado de temporada — no lo reemplazan.
-4. Botón **Aplicar resultados de esta fecha**.
-5. Repetís para las otras dos sedes.
-6. Actualizás el número de *Fecha* en la sección *Liga*.
-7. Botón **Descargar página**.
-8. Subís el `index.html` descargado a tu hosting, reemplazando el anterior.
+3. Botón **Aplicar resultados de esta fecha**.
+4. Actualizás el número de *Fecha* en la sección *Liga*.
+5. Botón **Descargar página**.
+6. Subís el `index.html` descargado a tu hosting, reemplazando el anterior.
 
 Los cambios recién se ven cuando subís el archivo nuevo. Mientras tanto quedan
 como *borrador* en tu navegador (botón **Guardar borrador**).
