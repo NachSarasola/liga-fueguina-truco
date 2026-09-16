@@ -34,18 +34,27 @@ contraseña se aplica cuando descargás y volvés a subir la página (paso 3).
 
 ## 3. Cargar una fecha y publicarla
 
-1. Entrás al panel.
-2. Sección *Resultados*: elegís la sede y cargás **PG** (partidos ganados) y
-   **PP** (partidos perdidos) de cada pareja. Los puntos se calculan solos
-   (2 por partido ganado; se cambia en *Liga*).
-3. Repetís para las otras dos sedes.
-4. Actualizás el número de *Fecha* en la sección *Liga*.
-5. Botón **Descargar página** (dejá tildado *Nueva fecha* para que se recalcule
-   el subió/bajó de posiciones).
-6. Subís el `index.html` descargado a tu hosting, reemplazando el anterior.
+Cada sábado se juega una fecha: un mini torneo eliminatorio por sede. Lo único
+que cargás es **qué le pasó a cada pareja** — el resultado ya trae los puntos
+fijos de esa ronda.
+
+1. Entrás al panel, sección *Resultado de la fecha*.
+2. Elegís la sede.
+3. Para cada pareja, elegís su resultado de hoy: Campeón, Subcampeón,
+   Semifinalista, Cuartofinalista, Eliminado en 16avos, Eliminado en 32avos, o
+   dejás "Sin cambios" si no jugó. Los puntos entre paréntesis se suman al
+   acumulado de temporada — no lo reemplazan.
+4. Botón **Aplicar resultados de esta fecha**.
+5. Repetís para las otras dos sedes.
+6. Actualizás el número de *Fecha* en la sección *Liga*.
+7. Botón **Descargar página**.
+8. Subís el `index.html` descargado a tu hosting, reemplazando el anterior.
 
 Los cambios recién se ven cuando subís el archivo nuevo. Mientras tanto quedan
 como *borrador* en tu navegador (botón **Guardar borrador**).
+
+Los puntos por cada resultado (100 al campeón, 70 al subcampeón, etc.) se
+cambian en *Liga → Puntos por resultado de fecha*, antes de aplicar la fecha.
 
 ## 4. Parejas
 
@@ -69,7 +78,6 @@ archivo; **Importar JSON** los restaura. Conviene exportar de vez en cuando.
 
 ## Tabla y reglas
 
-Columnas: `# · Pareja · PJ · PG · PP · Pts`. En el truco no hay empate, así que
-`PJ = PG + PP`. Orden: puntos → partidos ganados → menos perdidos. El corte de
-clasificación a la final (por defecto, los 8 primeros) y los puntos por victoria
-se cambian en *Liga*.
+Columnas: `# · Pareja · FJ · Tít · Pts`. FJ es fechas jugadas, Tít es fechas
+ganadas (campeonatos). Orden: puntos de temporada → fechas ganadas → finales
+alcanzadas → semifinales alcanzadas → nombre.
