@@ -113,8 +113,6 @@ footer.foot .lnks{display:flex;gap:14px;white-space:nowrap}
 .admin input[type=text],.admin input[type=number],.admin input[type=password],.admin select,.admin textarea{width:100%;font:400 13.5px var(--body);color:var(--ink);padding:7px 10px;background:var(--card-2);border:2px solid var(--rule-2);border-radius:var(--radius)}
 .admin input:focus-visible,.admin select:focus-visible,.admin textarea:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .admin textarea{min-height:80px;resize:vertical;font:400 12px var(--body)}
-.admin .ck{display:flex;gap:7px;align-items:flex-start;font-size:12.5px;margin:11px 0 0}
-.admin .ck input{margin-top:2px;flex:0 0 auto}
 .plist{display:flex;flex-direction:column;margin-top:9px}
 .pl{display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:9px 0;border-bottom:1px solid var(--rule)}
 .pl .nm{grid-column:1/-1}
@@ -597,66 +595,46 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
           '. <button class="lk" data-a="discard">Descartar</button></div>' : "") +
         (msg ? '<div class="msg">' + msg + '<button type="button" class="x" data-a="closemsg" aria-label="Cerrar">×</button></div>' : "") +
 
-        '<div class="g"><p class="gh">Liga</p>' +
-          '<div class="fg">' +
-            '<div class="fr"><label class="l">Nombre</label><input type="text" data-b="meta.leagueName" value="' + esc(m.leagueName) + '"></div>' +
-            '<div class="fr"><label class="l">Frase (portada)</label><input type="text" data-b="meta.tagline" value="' + esc(m.tagline) + '"></div>' +
-          "</div>" +
-          '<div class="fg">' +
-            '<div class="fr"><label class="l">Temporada</label><input type="text" data-b="meta.season" value="' + esc(m.season) + '"></div>' +
-            '<div class="fr"><label class="l">Fecha actual</label><input type="number" min="0" data-b="meta.fecha" value="' + m.fecha + '"></div>' +
-            '<div class="fr"><label class="l">Fechas totales</label><input type="number" min="1" data-b="meta.totalFechas" value="' + m.totalFechas + '"></div>' +
-          "</div>" +
-          '<label class="ck"><input type="checkbox" data-b="meta.demo"' + (m.demo ? " checked" : "") + '><span>Mostrar la marca “datos de ejemplo”</span></label>' +
-        "</div>" +
-
-        '<div class="g"><p class="gh">Puntos por resultado de fecha</p>' +
-          '<div class="fg pts">' + RESULT_KEYS.map(function (k) {
-            var wide = k === "ausente" ? ' style="flex:0 1 150px"' : "";
-            return '<div class="fr"' + wide + '><label class="l">' + esc(RESULT_LABELS[k]) + '</label><input type="number" min="0" data-b="meta.resultPts.' + k + '" value="' + m.resultPts[k] + '"></div>';
-          }).join("") + "</div>" +
-        "</div>" +
-
-        '<div class="g"><p class="gh">Información pública</p>' +
-          '<div class="fr"><label class="l">Premios</label><textarea data-b="meta.info.premios">' + esc(m.info.premios) + "</textarea></div>" +
-          '<div class="fg"><div class="fr" style="flex:0 1 340px"><label class="l">Organiza</label><input type="text" data-b="meta.info.organiza" value="' + esc(m.info.organiza) + '"></div></div>' +
-          '<div class="fg">' +
-            '<div class="fr"><label class="l">Sede (dónde se juega)</label><input type="text" data-b="meta.info.sede" value="' + esc(m.info.sede) + '"></div>' +
-            '<div class="fr"><label class="l">Dirección</label><input type="text" data-b="meta.info.direccion" value="' + esc(m.info.direccion) + '"></div>' +
-          "</div>" +
-          '<div class="fr"><label class="l">Link de Google Maps</label><input type="text" data-b="meta.info.mapsUrl" value="' + esc(m.info.mapsUrl) + '"></div>' +
-          '<div class="fr"><label class="l">Redes de Instagram (una por línea, sin @)</label><textarea data-b="meta.info.redes">' + esc(m.info.redes) + "</textarea></div>" +
-        "</div>" +
-
-        '<div class="g"><p class="gh">Contraseña</p><div class="fg">' +
-          '<div class="fr"><label class="l">Nueva</label><input type="password" id="p1" autocomplete="new-password"></div>' +
-          '<div class="fr"><label class="l">Repetir</label><input type="password" id="p2" autocomplete="new-password"></div>' +
-        '</div><button class="btn o s" type="button" data-a="setpw" style="margin-top:9px">Cambiar</button>' +
-        '<span id="pm" style="margin-left:9px;font-size:11px;color:var(--ink-2)"></span></div>' +
-
-        '<div class="g"><p class="gh">Parejas (' + state.pairs.length + ")</p>" +
-          '<div class="plist">' + pairLines + "</div>" +
-          '<button class="btn o s" type="button" data-a="addpair" style="margin-top:9px">Agregar pareja</button>' +
-          '<details class="bk" style="margin-top:10px"><summary>Importar lista</summary>' +
-            '<p style="font-size:11px;color:var(--ink-2);margin:7px 0 5px">Una por línea: <code>Jugador 1; Jugador 2; nombre opcional</code>. Reemplaza todo y pone los resultados en cero.</p>' +
-            '<textarea id="ip"></textarea>' +
-            '<button class="btn o s" type="button" data-a="imppairs" style="margin-top:7px">Reemplazar</button></details>' +
-        "</div>" +
-
         '<div class="g"><p class="gh">Resultado de la fecha</p>' +
-          '<p style="font-size:11.5px;color:var(--ink-2);margin:0">Elegí qué hizo cada pareja hoy y aplicá. Los puntos se suman al acumulado de temporada.</p>' +
+          '<div class="fr" style="max-width:140px"><label class="l">Fecha actual</label><input type="number" min="1" data-b="meta.fecha" value="' + m.fecha + '"></div>' +
           '<div class="tw"><table class="grid"><thead><tr><th>Pareja</th><th>Pts acum.</th><th>Resultado de hoy</th></tr></thead><tbody>' +
             grid +
           "</tbody></table></div>" +
           '<button class="btn s" type="button" data-a="applyfecha" style="margin-top:9px">Aplicar resultados de esta fecha</button>' +
         "</div>" +
 
+        '<details class="bk g"><summary>Parejas (' + state.pairs.length + ")</summary>" +
+          '<div class="plist" style="margin-top:11px">' + pairLines + "</div>" +
+          '<button class="btn o s" type="button" data-a="addpair" style="margin-top:9px">Agregar pareja</button>' +
+          '<details class="bk" style="margin-top:10px"><summary>Importar lista</summary>' +
+            '<p style="font-size:11px;color:var(--ink-2);margin:7px 0 5px">Una por línea: <code>Jugador 1; Jugador 2; nombre opcional</code>. Reemplaza todo y pone los resultados en cero.</p>' +
+            '<textarea id="ip"></textarea>' +
+            '<button class="btn o s" type="button" data-a="imppairs" style="margin-top:7px">Reemplazar</button></details>' +
+        "</details>" +
+
+        '<details class="bk g"><summary>Configuración avanzada</summary>' +
+          '<div class="fr" style="max-width:140px;margin-top:11px"><label class="l">Fechas totales</label><input type="number" min="1" data-b="meta.totalFechas" value="' + m.totalFechas + '"></div>' +
+          '<p class="gh" style="margin-top:16px">Puntos por resultado de fecha</p>' +
+          '<div class="fg pts">' + RESULT_KEYS.map(function (k) {
+            var wide = k === "ausente" ? ' style="flex:0 1 150px"' : "";
+            return '<div class="fr"' + wide + '><label class="l">' + esc(RESULT_LABELS[k]) + '</label><input type="number" min="0" data-b="meta.resultPts.' + k + '" value="' + m.resultPts[k] + '"></div>';
+          }).join("") + "</div>" +
+          '<p class="gh" style="margin-top:16px">Contraseña</p>' +
+          '<div class="fg">' +
+            '<div class="fr"><label class="l">Nueva</label><input type="password" id="p1" autocomplete="new-password"></div>' +
+            '<div class="fr"><label class="l">Repetir</label><input type="password" id="p2" autocomplete="new-password"></div>' +
+          "</div>" +
+          '<button class="btn o s" type="button" data-a="setpw" style="margin-top:9px">Cambiar</button>' +
+          '<span id="pm" style="margin-left:9px;font-size:11px;color:var(--ink-2)"></span>' +
+        "</details>" +
+
         '<div class="abar">' +
           '<span class="st ' + (view.dirty ? "w" : "") + '">' + (view.dirty ? "Cambios sin publicar." : "Sin cambios pendientes.") + "</span>" +
           '<button class="btn" type="button" data-a="download">Descargar página</button>' +
           '<button class="btn o" type="button" data-a="draft">Guardar borrador</button>' +
           '<details class="bk" style="flex:1 1 100%"><summary>Copia de seguridad</summary>' +
-            '<div style="display:flex;gap:9px;margin-top:7px;flex-wrap:wrap">' +
+            '<p style="font-size:11px;color:var(--ink-2);margin:7px 0 5px">Exportá el JSON para editar a mano textos como premios, sede o redes, y volvé a importarlo.</p>' +
+            '<div style="display:flex;gap:9px;flex-wrap:wrap">' +
               '<button class="btn o s" type="button" data-a="expjson">Exportar JSON</button>' +
               '<button class="btn o s" type="button" data-a="impjson">Importar JSON</button></div></details>' +
         "</div>" +
@@ -668,16 +646,11 @@ code{font-size:11px;background:var(--card-2);padding:1px 4px;border-radius:4px}
     var p = path.split(".");
     if (p[0] === "meta") {
       var k = p[1];
-      if (k === "info") {
-        state.meta.info = state.meta.info || {};
-        state.meta.info[p[2]] = String(value);
-      } else if (k === "resultPts") {
+      if (k === "resultPts") {
         state.meta.resultPts = state.meta.resultPts || {};
         state.meta.resultPts[p[2]] = Math.max(0, num(value));
       }
       else if (k === "fecha" || k === "totalFechas") state.meta[k] = num(value);
-      else if (k === "demo") state.meta[k] = !!value;
-      else state.meta[k] = String(value);
     } else if (p[0] === "pair") {
       var pr = null;
       for (var i = 0; i < state.pairs.length; i++) if (state.pairs[i].id === p[1]) pr = state.pairs[i];
