@@ -4,7 +4,7 @@ Una sola página (`index.html`) que muestra la tabla de posiciones de la Liga de
 Truco Ushuaia y un panel de administración para cargar los resultados. No
 necesita servidor, base de datos ni cuentas.
 
-Demo en vivo: https://claude.ai/code/artifact/1d98de2a-d51c-4ffa-a67b-b64dfe7bc5ab
+Demo en vivo: https://nachsarasola.github.io/liga-fueguina-truco/
 
 ---
 
@@ -26,8 +26,9 @@ propósito, es la puerta de entrada del administrador.
 
 Contraseña inicial: **`truco2026`**
 
-**Cambiala antes de entregar la página.** Panel → sección *Contraseña*. La nueva
-contraseña se aplica cuando descargás y volvés a subir la página (paso 3).
+**Cambiala antes de entregar la página.** Panel → *Configuración avanzada →
+Contraseña*. La nueva contraseña se aplica cuando descargás y volvés a subir
+la página (paso 3).
 
 > Aclaración de seguridad: la contraseña frena a un curioso, pero cualquiera que
 > descargue el HTML puede leer su rastro. Para una liga alcanza; no la uses para
@@ -39,41 +40,55 @@ Cada sábado se juega una fecha: un mini torneo eliminatorio por sede. Lo único
 que cargás es **qué le pasó a cada pareja** — el resultado ya trae los puntos
 fijos de esa ronda.
 
-1. Entrás al panel, sección *Resultado de la fecha*.
+1. Entrás al panel: lo primero que ves es *Resultado de la fecha*, con el
+   número de fecha arriba.
 2. Para cada pareja, elegís su resultado de hoy: Campeón, Subcampeón,
    Semifinalista, Cuartofinalista, Eliminado en 16avos, Eliminado en 32avos, o
    dejás "Sin cambios" si no jugó. Los puntos entre paréntesis se suman al
    acumulado de temporada — no lo reemplazan.
 3. Botón **Aplicar resultados de esta fecha**.
-4. Actualizás el número de *Fecha* en la sección *Liga*.
+4. Actualizás el número de *Fecha actual*, arriba de la grilla, para la
+   próxima vez.
 5. Botón **Descargar página**.
 6. Subís el `index.html` descargado a tu hosting, reemplazando el anterior.
 
 Los cambios recién se ven cuando subís el archivo nuevo. Mientras tanto quedan
 como *borrador* en tu navegador (botón **Guardar borrador**).
 
-Los puntos por cada resultado (100 al campeón, 70 al subcampeón, etc.) se
-cambian en *Liga → Puntos por resultado de fecha*, antes de aplicar la fecha.
+Los puntos por cada resultado (100 al campeón, 70 al subcampeón, etc.) casi
+nunca hace falta tocarlos — están en *Configuración avanzada → Puntos por
+resultado de fecha*, plegados porque se definen una vez al arrancar la
+temporada.
 
 ## 4. Parejas
 
-Sección *Parejas*: editás jugador 1 y jugador 2 de cada pareja, agregás o
-quitás. El campo *Nombre o club* es opcional; si lo dejás vacío, la pareja se
-muestra por los apellidos.
+Sección plegable *Parejas*: editás jugador 1 y jugador 2 de cada pareja,
+agregás o quitás. El campo *Nombre o club* es opcional; si lo dejás vacío, la
+pareja se muestra por los apellidos.
 
-Para cargar las 32 de una: *Parejas → Importar lista*, una por línea con el
-formato `Jugador 1; Jugador 2; nombre opcional`.
+Para cargar las 32 reales de una: *Parejas → Importar lista*, una por línea
+con el formato `Jugador 1; Jugador 2; nombre opcional`. Esto también pone
+todos los resultados en cero — usalo antes de arrancar la temporada, la
+página trae 32 parejas de relleno para no arrancar vacía.
 
-## 5. Datos de ejemplo
+## 5. Textos del sitio (nombre, premios, sede, redes)
 
-La página viene con 32 parejas y resultados ficticios, marcados con *"datos de
-ejemplo"*. Cuando cargues los reales, destildá esa marca en *Liga → Mostrar la
-marca "datos de ejemplo"*. Al importar la lista de parejas se saca sola.
+El panel no tiene formulario para esto a propósito — son cosas que casi no
+cambian y así el panel queda simple para el uso de todos los sábados. Se
+editan a mano por *Copia de seguridad*:
+
+1. **Exportar JSON** para bajar todos los datos en un archivo.
+2. Abrís ese archivo en cualquier editor de texto y cambiás lo que haga
+   falta dentro de `meta` — `leagueName`, `tagline`, `season`, y dentro de
+   `meta.info`: `premios`, `organiza`, `sede`, `direccion`, `mapsUrl`, `redes`.
+3. **Importar JSON**, pegás el contenido editado y cargás.
+4. **Descargar página** como siempre.
 
 ## 6. Copia de seguridad
 
 *Panel → Copia de seguridad*: **Exportar JSON** guarda todos los datos en un
-archivo; **Importar JSON** los restaura. Conviene exportar de vez en cuando.
+archivo; **Importar JSON** los restaura. Conviene exportar de vez en cuando,
+y es indispensable antes de editar los textos del punto anterior.
 
 ## Tabla y reglas
 
